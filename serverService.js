@@ -63,14 +63,14 @@ app.get('/',function(req,res,next){
 
 
 app.get('/tables',function(req,res,next){
-  var context = {};
+  var results = {};
   mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
       next(err);
       return;
     }
-    context.results = JSON.stringify(rows);
-    res.render('home', context);
+    var results = JSON.stringify(rows);
+    res.send(results);
   });
 });
 
