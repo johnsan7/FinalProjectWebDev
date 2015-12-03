@@ -69,7 +69,7 @@ app.get('/tables',function(req,res,next){
       next(err);
       return;
     }
-    var results = JSON.stringify(rows);
+    results = JSON.stringify(rows);
     res.send(results);
   });
 });
