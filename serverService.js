@@ -55,14 +55,14 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-app.get('/tables',function(req,res,next){
+app.get('/',function(req,res,next){
 
-    res.render('home', context);
+    res.render('data');
  
 });
 
 
-app.get('/',function(req,res,next){
+app.get('/tables',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
