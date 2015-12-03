@@ -40,19 +40,20 @@ app.set('port', 1976);
 //This next function is the function given by the instructor to reset the database and create a new one, a very bad idea generally, but 
 //Works well for this course
 
+
 app.get('/reset-table',function(req,res,next){
-	console.log("Got into reset table");
-	var context = {};
-	pool.query("DROP TABLE IF EXISTS todo", function(err){
-		var createString = "CREATE TABLE todo(" +
-		"id INT PRIMARY KEY AUTO_INCREMENT," +
-		"name VARCHAR(255) NOT NULL," +
-		"done BOOLEAN," +
-		"due DATE)";
-		pool.query(createString, function(err){
-console.log("mysql query seems to have gone through");
-		context.results = "Table reset";
-		res.send("Table reset");
+  var context = {};
+  pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
+    var createString = "CREATE TABLE workouts("+
+    "id INT PRIMARY KEY AUTO_INCREMENT,"+
+    "name VARCHAR(255) NOT NULL,"+
+    "reps INT,"+
+    "weight INT,"+
+    "date DATE,"+
+    "lbs BOOLEAN)";
+    mysql.pool.query(createString, function(err){
+      context.results = "Table reset";
+      res.send(context.results);
     })
   });
 });
@@ -67,7 +68,7 @@ app.get('/',function(req,res,next){
 app.get('/tables',function(req,res,next){
 console.log("getting to tables function, should be sending back everything")
   var results = {};
-  pool.query('SELECT * FROM todo', function(err, rows, fields){
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
       return;
@@ -80,7 +81,7 @@ console.log("Got to after the mysql query");
 
 app.get('/insert',function(req,res,next){
   var context = {};
-  pool.query("INSERT INTO todo (`name`) VALUES (?)", [req.query.c], function(err, result){
+  pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.c], function(err, result){
     if(err){
       next(err);
       return;
