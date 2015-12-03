@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>Guess the Weather Game!</title>
+</head>
+<body>
+	<h3>Hello, {{name}}. You have ${{total}} left. </h3>
+	Please guess a number of degrees Fahrenheit. One of the random cities below will be chosen. If you are within 5 degrees you win $3. <br>
+	If you are not within 5 degrees, you lose 1 dollar. 
+	<br>
+	<br>
+	{{{body}}}
+	<form action='/' method='get'>
+		Degrees in Fahrenheit guess:
+		<br>
+		<input type="text" name="guess">
+		<input type="submit" value="player guess">
+		<br>
+	</form>
+	
+	{{#if outcomeText}}
+	<p>{{outcomeText}} {{guess}} City Temperature was actually {{temp}} </p>
+	<p> City name was {{cityName}} from randomly chosen zip code {{zipCode}} </p>
+	<p> Please choose another temperature! <p>
+	
+	{{/if}}
+	
+</body>
+
+	
+
+</html>
