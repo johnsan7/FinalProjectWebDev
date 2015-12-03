@@ -41,34 +41,38 @@ app.set('port', 1976);
 //Works well for this course
 
 app.get('/reset-table',function(req,res,next){
-  var context = {};
-  mysql.pool.query("DROP TABLE IF EXISTS todo", function(err){
-    var createString = "CREATE TABLE todo(" +
-    "id INT PRIMARY KEY AUTO_INCREMENT," +
-    "name VARCHAR(255) NOT NULL," +
-    "done BOOLEAN," +
-    "due DATE)";
-    mysql.pool.query(createString, function(err){
-      context.results = "Table reset";
-      res.send("Table reset");
+	console.log("Got into reset table");
+	var context = {};
+	mysql.pool.query("DROP TABLE IF EXISTS todo", function(err){
+		var createString = "CREATE TABLE todo(" +
+		"id INT PRIMARY KEY AUTO_INCREMENT," +
+		"name VARCHAR(255) NOT NULL," +
+		"done BOOLEAN," +
+		"due DATE)";
+		mysql.pool.query(createString, function(err){
+console.log("mysql query seems to have gone through");
+		context.results = "Table reset";
+		res.send("Table reset");
     })
   });
 });
 
 app.get('/',function(req,res,next){
-
+	
     res.render('data');
  
 });
 
 
 app.get('/tables',function(req,res,next){
+console.log("getting to tables function, should be sending back everything")
   var results = {};
   mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
       next(err);
       return;
     }
+console.log("Got to after the mysql query");
     results = JSON.stringify(rows);
     res.send(results);
   });
