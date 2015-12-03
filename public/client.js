@@ -10,7 +10,7 @@ var req = new XMLHttpRequest();
 
 app.use(express.static('public'));
 
-document.addEventListener('DOMContentLoaded', reset_table);
+document.addEventListener('DOMContentLoaded', drawTable());
 
 //First we will reset the database. When this loads, it will simply draw the table. 
 
@@ -20,7 +20,7 @@ function reset_table()
 	req.addEventListener('load', function()
 	{
 		drawTable();
-	}
+	});
 }
 //This is the basic code of the game. 
 
@@ -32,8 +32,8 @@ function drawTable()
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/', true);
 	req.addEventListener('load', function()
 	{
-		console.log(JSON.parse(response);
-	}
+		console.log(JSON.parse(response));
+	});
 	
 	
 }
