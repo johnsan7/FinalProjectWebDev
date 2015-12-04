@@ -6,9 +6,8 @@
 
 //var app = express();
 
-var req = new XMLHttpRequest();
 
-var delReq = new XMLHttpRequest();
+
 
 console.log("Client Javascript is running");
 
@@ -35,6 +34,8 @@ function reset_table()
 
 function drawTable()
 {
+	var req = new XMLHttpRequest();
+	
 console.log("gets into drawTable at least");
 
 	//This removes the current table if there is one
@@ -185,6 +186,8 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 
 function buttonAssign()
 {
+	var delReq = new XMLHttpRequest();
+
 	var deleteButtons = document.getElementsByClassName("deleteButton");
 	for(var j=0; j<deleteButtons.length; j++)
 	{
