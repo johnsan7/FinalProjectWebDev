@@ -11,11 +11,11 @@
 
 console.log("Client Javascript is running");
 
-drawTable();
+//drawTable();
 
 //app.use(express.static('public'));
 
-//document.addEventListener('DOMContentLoaded', drawTable);
+document.addEventListener('DOMContentLoaded', drawTable);
 
 
 //First we will reset the database. When this loads, it will simply draw the table. 
