@@ -37,8 +37,8 @@ console.log("gets into drawTable at least");
 	if(document.getElementById("dataTable") != null)
 	{	
 		var element = document.getElementById("dataTable");
-		element.parentNode.removeChild(element);
-		console.log("Table deleting triggered");
+		element.parentNode.removeChild();
+		console.log("Table deleting triggered WANT TO BE VSISIBLE TOO MANY PRINT STATEMENTS!!!!!");
 		
 	}
 	
@@ -53,22 +53,29 @@ console.log("gets into drawTable at least");
 			console.log("after parsing response was: ", response);
 			var newTable = document.createElement('table');
 			newTable.id="dataTable";
+			
 			var newHead = document.createElement('thead');		//Create header
 			var newRow = document.createElement('tr');
 			var newBody = document.createElement("tbody");
+			
 			console.log("Created header stubs");		
+			
 			var nameTitle = document.createElement('th');
 			nameTitle.textContent = 'Name';
 			newRow.appendChild(nameTitle);
+			
 			var repsTitle = document.createElement('th');
 			repsTitle.textContent = 'Reps';
 			newRow.appendChild(repsTitle);
+			
 			var weightTitle = document.createElement('th');
 			weightTitle.textContent = 'Weight';
 			newRow.appendChild(weightTitle);
+			
 			var dateTitle = document.createElement('th');
 			dateTitle.textContent = 'Date';
 			newRow.appendChild(dateTitle);
+			
 			var lbsTitle = document.createElement('th');
 			lbsTitle.textContent = 'Lbs';
 			newRow.appendChild(lbsTitle);
