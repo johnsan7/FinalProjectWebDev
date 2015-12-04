@@ -32,11 +32,12 @@ function drawTable()
 {
 console.log("gets into drawTable at least");
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/tables', true);
-	req.addEventListener('load', function(req)
+	req.addEventListener('load', function()
 	{
 		if(req.status >= 200 && req.status < 400)
 		{
 			console.log("Request was returned");
+			console.log("Respons was: ", req.responseText);
 			var response = JSON.parse(req.responseText);
 			var newTable = document.createElement('table');
 			var newHead = document.createElement('thead');		//Create header
