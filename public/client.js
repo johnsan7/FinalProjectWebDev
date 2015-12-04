@@ -38,7 +38,7 @@ console.log("gets into drawTable at least");
 	{			
 		console.log("Table deleting triggered WANT TO BE VSISIBLE TOO MANY PRINT STATEMENTS!!!!!");
 		var eltable = document.getElementById("dataTable");
-		element.parentNode.removeChild(eltable);
+		eltable.parentNode.removeChild(eltable);
 
 		
 	}
