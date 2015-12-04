@@ -98,14 +98,28 @@ console.log("gets into drawTable at least");
 				var deleteButton = document.createElement('button');
 				var editButton = document.createElement('button');
 				
+				//The next two blocks hopefully create hidden data items with the id that follows each button.
+				//I hope to be able to access them since they are siblings. 
+				
+				var hidDeleteID = document.createElement('hidden');
+				hidDeleteID.name="id";
+				hidDeleteID.value="{{response[thing].id}}";
+				
+				var hidUpdateID = document.createElement('hidden');
+				hidUpdateID.name="id";
+				hidUpdateID.value="{{response[thing].id}}";
+
+				
 				var deleteText = document.createTextNode("Delete");
 				var editText = document.createTextNode("Edit");
-				
+			
 				deleteButton.appendChild(deleteText);
 				editButton.appendChild(editText);
 				
 				buttonRow.appendChild(deleteButton);
+				buttonRow.appendChild(hidDeleteID);
 				buttonRow.appendChild(editButton);
+				button.Row.appendChild(hidUpdateID);
 				
 				newBody.appendChild(buttonRow);
 				
