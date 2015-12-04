@@ -150,7 +150,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 }
 
 var deleteButtons = document.getElementsByClassName("deleteButton");
-
+console.log("Delete Buttons is length: ", deleteButtons.length);
 for(var i=0; i<deleteButtons.length; i++)
 {
 	console.log("Adding delete function");
