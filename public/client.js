@@ -116,6 +116,9 @@ console.log("gets into drawTable at least");
 				deleteButton.appendChild(deleteText);
 				editButton.appendChild(editText);
 				
+				deleteButton.class="deleteButton";
+				editButton.class="editButton";
+				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
 				buttonRow.appendChild(editButton);
@@ -139,7 +142,12 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 	});
 	
 	req.send(null);
-	event.preventDefault();
-	
-	
+	event.preventDefault();	
 }
+
+getElementsByClassName("deleteButton").setEventListener('click' function (event)
+{
+	console.log("Event listener works for delete buttons");
+	
+	
+});
