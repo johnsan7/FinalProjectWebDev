@@ -131,6 +131,7 @@ console.log("gets into drawTable at least");
 					return function()
 					{
 						console.log("delete button id is: ", delBut.value);  //Note to test git. 
+						drawTable();
 					}
 				}(deleteButton));
 				
