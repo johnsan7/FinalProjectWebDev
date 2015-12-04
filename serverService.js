@@ -75,8 +75,8 @@ console.log("getting to tables function, should be sending back everything")
     }
 console.log("Got to after the mysql query");
 	res.setHeader('Content-Type', 'application/json');
-    results = JSON.stringify(rows);
-    res.send(results);
+    
+    res.send(JSON.stringify(rows));
   });
 });
 
