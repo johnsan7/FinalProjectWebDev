@@ -128,7 +128,7 @@ console.log("gets into drawTable at least");
 				//This sets up a closure so the correct deleteButton gets passed
 				deleteButton.onclick=(function(i)
 				{
-					return deleteRow(i);
+					return deleteRow(i); //Note to test git. 
 					
 				})(deleteButton);
 				
