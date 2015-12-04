@@ -60,7 +60,7 @@ app.get('/reset-table',function(req,res,next){
 
 app.get('/',function(req,res,next){
 	
-    res.render('data');
+    //res.render('data');
  
 });
 
