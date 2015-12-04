@@ -132,7 +132,7 @@ console.log("gets into drawTable at least");
 					{
 						console.log("delete button id is: ", delBut.value);  //Note to test git. 
 					}
-				}(deleteButton);
+				}(deleteButton));
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
