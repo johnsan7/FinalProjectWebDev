@@ -204,7 +204,7 @@ function buttonAssign()
 								//delBut.nextSibling.nextSibling.removeNode;
 								//delBut.nextSibling.removeNode;
 								//delBut.parentNode.removeChild(delBut);
-								//drawTable();
+								drawTable();
 							}
 							else
 							{
