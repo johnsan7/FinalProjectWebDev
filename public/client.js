@@ -65,6 +65,7 @@ console.log("gets into drawTable at least");
 			console.log("Appended headers to head");		
 			for(var thing in response)
 			{
+				console.log("Appending rows in loop");
 				var nextRow = document.createElement('tr');
 				
 				var nameBox = document.createElement('td');
