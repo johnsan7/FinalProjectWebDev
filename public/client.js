@@ -92,6 +92,23 @@ console.log("gets into drawTable at least");
 				
 				newBody.appendChild(nextRow);
 				
+				//Above code adds the data row, next rows add the buttons. 
+				
+				var buttonRow = document.createElement('tr');
+				var deleteButton = document.createElement('form');
+				var editButton = document.createElement('form');
+				
+				var deleteText = "Delete";
+				var editText = "Edit";
+				
+				deleteButton.appendChild(deleteText);
+				editButton.appendChild(editText);
+				
+				buttonRow.appendChild(deleteButton);
+				buttonRow.appendChild(editButton);
+				
+				newBody.appendChild(buttonRow);
+				
 				// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
 			}
 			console.log("Done appending rows");
