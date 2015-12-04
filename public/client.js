@@ -102,7 +102,7 @@ console.log("gets into drawTable at least");
 				//I hope to be able to access them since they are siblings. 
 				
 				var hidDeleteID = document.createElement('hidden');
-				hidDeleteID.name="id";
+				hidDeleteID.name="hidden thing";
 				hidDeleteID.value=response[thing].id;
 				
 				var hidUpdateID = document.createElement('hidden');
@@ -136,7 +136,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 			newTable.appendChild(newBody);
 			document.body.appendChild(newTable);
 			console.log("Table actually got appended");
-			//assignDeleteButtons();
+
 		}
 		else
 		{
@@ -154,7 +154,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 
 function deleteRow (button)
 {
-	console.log("Delete ID passed by button was: ", button.nextSibling.value);
+	console.log("Delete ID passed by button was: ", button.nextSibling.name);
 	
 };
 		
