@@ -34,12 +34,13 @@ function drawTable()
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/tables', true);
 	req.addEventListener('load', function()
 	{
+console.log("Request was returned");
 		var response = JSON.parse(req.responseText);
 		var newTable = document.createElement('table');
 		var newHead = document.createElement('thead');		//Create header
 		var newRow = document.createElement('tr');
 		var newBody = document.createElement("tbody");
-		
+console.log("Created header stubs");		
 		var nameTitle = document.createElement('th');
 		nameTitle.textContent = 'Name';
 		newRow.appendChild(nameTitle);
@@ -59,7 +60,7 @@ function drawTable()
 		newHead.appendChild(newRow);
 		//The above should build the header. Next we can do the actual data in the body
 		//Now we need to build the body, and to do that we need to do a loop, I think for each will work. 
-		
+console.log("Appended headers to head");		
 		for(var thing in response)
 		{
 			var nextRow = document.createElement('tr');
@@ -88,9 +89,11 @@ function drawTable()
 			
 			// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
 		}
+console.log("Done appending rows");
 		newTable.appendChild(newHead);
 		newTable.appendChild(newBody);
 		document.body.appendChild(newTable);
+console.log("Table actually got appended");
 	});
 	
 	
