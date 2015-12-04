@@ -31,6 +31,14 @@ function reset_table()
 function drawTable()
 {
 console.log("gets into drawTable at least");
+
+	//This removes the current table if there is one
+	if(document.getElementById("dataTable")
+	{
+		document.getElementsByName(body).removeChild("newTable");
+		
+	}
+	
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/tables', true);
 	req.addEventListener('load', function()
 	{
@@ -41,6 +49,7 @@ console.log("gets into drawTable at least");
 			var response = JSON.parse(req.responseText);
 			console.log("after parsing response was: ", response);
 			var newTable = document.createElement('table');
+			newTable.id="dataTable";
 			var newHead = document.createElement('thead');		//Create header
 			var newRow = document.createElement('tr');
 			var newBody = document.createElement("tbody");
