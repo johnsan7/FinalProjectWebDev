@@ -215,7 +215,7 @@ function buttonAssign()
 						//event.preventDefault();	
 						
 					}
-				}(deleteButton));
+				}(deleteButtons[j]));
 				
 		
 		
