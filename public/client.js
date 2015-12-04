@@ -50,7 +50,8 @@ console.log("gets into drawTable at least");
 		{
 			console.log("Request was returned");
 			console.log("Respons was: ", req.responseText);
-			var response = JSON.parse(req.responseText);
+			//var response = JSON.parse(req.responseText);  This is working but getting errors on reloads
+			var response = req.responseText;
 			console.log("after parsing response was: ", response);
 			var newTable = document.createElement('table');
 			newTable.id="dataTable";
