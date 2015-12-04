@@ -2,9 +2,9 @@
 //This program is a game where there are 100 random zip codes from US locations. You have to guess the temperature within 5 degrees without knowing the name
 //of the city. You get 3 points for a correct answer and lose 1 point for an incorrect. 
 
-var express = require('express');
+//var express = require('express');
 
-var app = express();
+//var app = express();
 
 var req = new XMLHttpRequest();
 
