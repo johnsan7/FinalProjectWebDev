@@ -162,7 +162,7 @@ console.log("gets into drawTable at least");
 								delBut.nextSibling.removeNode;
 								delBut.nextSibling.removeNode;
 								delBut.nextSibling.removeNode;
-								delBut.parentNode.removeChild();
+								delBut.parentNode.removeChild(delBut);
 								//drawTable();
 							}
 							else
