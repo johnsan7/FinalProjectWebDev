@@ -161,7 +161,7 @@ function assignDeleteButtons()
 		console.log("Adding delete function");
 		deleteButtons[i].addEventListener("click", function()
 		{
-			var dID = 3; //whatever code will get the id from the sibling
+			var dID = 2; //whatever code will get the id from the sibling
 			var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+ dID;
 			console.log("URL being sent is: ", url);
 			
@@ -171,8 +171,9 @@ function assignDeleteButtons()
 				if(req.status >= 200 && req.status < 400)
 				{
 					console.log("good delete response");
+					drawTable();
 				}
-				//drawTable();
+				
 				else
 				{
 					console.log("Looks like bad code");
