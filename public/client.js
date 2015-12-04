@@ -153,6 +153,7 @@ var deleteButtons = document.getElementsByClassName("deleteButton");
 
 for(var i=0; i<deleteButtons.length; i++)
 {
+	console.log("Adding delete function");
 	deleteButtons[i].addEventListener("click", function()
 	{
 		var dID = 1; //whatever code will get the id from the sibling

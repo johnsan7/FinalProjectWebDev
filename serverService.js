@@ -110,16 +110,17 @@ app.get('/simple-update',function(req,res,next){
 });
 
 app.get('/delete',function(req,res,next){
-  var context = {};
-  pool.query("DELETE FROM workouts WHERE id=?",
-    [req.query.id],
-    function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = "Updated " + result.changedRows + " rows.";
-    res.send(context.results);
+console.log("Getting to delete function");	
+	var context = {};
+	pool.query("DELETE FROM workouts WHERE id=?",
+		[req.query.id],
+		function(err, result){
+		if(err){
+		  next(err);
+		  return;
+		}
+		context.results = "Updated " + result.changedRows + " rows.";
+		res.send(context.results);
   });
 });
 
