@@ -139,7 +139,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 		}
 		else
 		{
-			console.log("Something wrong with request, response code was: ", req.statusText);
+			console.log("Something wrong with request, response code was: ", req.status);
 			
 		}
 		
