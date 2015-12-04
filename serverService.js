@@ -109,6 +109,21 @@ app.get('/simple-update',function(req,res,next){
   });
 });
 
+app.get('/delete',function(req,res,next){
+  var context = {};
+  pool.query("DELETE FROM workouts WHERE id=?",
+    [req.query.id],
+    function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = "Updated " + result.changedRows + " rows.";
+    res.send(context.results);
+  });
+});
+
+
 
 //These next two are right from the lectures
 app.use(function(req,res)

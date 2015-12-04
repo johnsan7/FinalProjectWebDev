@@ -116,8 +116,8 @@ console.log("gets into drawTable at least");
 				deleteButton.appendChild(deleteText);
 				editButton.appendChild(editText);
 				
-				deleteButton.id="deleteButton";
-				editButton.id="editButton";
+				deleteButton.class="deleteButton";
+				editButton.class="editButton";
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
@@ -127,11 +127,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 				newBody.appendChild(buttonRow);
 				
 				// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
-				
-				document.getElementById("deleteButton").addEventListener('click', function (event)
-				{
-					console.log("Event listener works for delete buttons");
-				});	
+			
 				
 			}
 			console.log("Done appending rows");
@@ -153,3 +149,24 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 	event.preventDefault();	
 }
 
+var deleteButtons = document.getElementsByClassName("deleteButton");
+
+for(var i=0; i<deleteButtons.length; i++)
+{
+	deleteButtons[i].addEventListener("click", function()
+	{
+		var dID = 1; //whatever code will get the id from the sibling
+		req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+dID, true);
+		req.addEventListener('load', function()
+		{
+			drawTable();
+			
+		});
+	});
+	
+	
+}
+
+
+		
+		
