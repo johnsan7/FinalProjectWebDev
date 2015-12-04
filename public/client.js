@@ -163,7 +163,7 @@ function assignDeleteButtons()
 		{
 			if(req.status >= 200 && req.status < 400)
 			{
-				var dID = 1; //whatever code will get the id from the sibling
+				var dID = 3; //whatever code will get the id from the sibling
 				req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+dID, true);
 				req.addEventListener('load', function()
 				{
