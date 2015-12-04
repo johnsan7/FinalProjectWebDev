@@ -33,13 +33,13 @@ function drawTable()
 console.log("gets into drawTable at least");
 
 	//This removes the current table if there is one
-	//if(document.getElementById("dataTable"))
-	//{	
+	if(document.getElementById("dataTable") != null)
+	{	
 		var element = document.getElementById("dataTable");
 		element.parentNode.removeChild(element);
 		console.log("Table deleting triggered");
 		
-	//}
+	}
 	
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/tables', true);
 	req.addEventListener('load', function()
