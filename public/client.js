@@ -119,7 +119,7 @@ console.log("gets into drawTable at least");
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
 				buttonRow.appendChild(editButton);
-				button.Row.appendChild(hidUpdateID);
+				buttonRow.appendChild(hidUpdateID);
 				
 				newBody.appendChild(buttonRow);
 				
