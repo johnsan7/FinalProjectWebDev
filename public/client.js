@@ -161,22 +161,20 @@ function assignDeleteButtons()
 		console.log("Adding delete function");
 		deleteButtons[i].addEventListener("click", function()
 		{
-			if(req.status >= 200 && req.status < 400)
+			
+			var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+ dID;
+			var dID = 3; //whatever code will get the id from the sibling
+			req.open('GET', url, true);
+			req.addEventListener('load', function()
 			{
-				var dID = 3; //whatever code will get the id from the sibling
-				req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+dID, true);
-				req.addEventListener('load', function()
-				{
-					drawTable();
+				drawTable();
 				
-				});
+			});
 
-			}
-			else
-			{
-				console.log("defect in delete request, came back error");
-				
-			}
+			
+
+			req.send(null);
+			event.preventDefault();	
 		});
 		
 		
