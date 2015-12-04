@@ -8,6 +8,8 @@
 
 var req = new XMLHttpRequest();
 
+var delReq = new XMLHttpRequest();
+
 console.log("Client Javascript is running");
 
 //app.use(express.static('public'));
@@ -190,10 +192,10 @@ function buttonAssign()
 					{
 						console.log("delete button id is: ", delBut.value);  //Note to test git. 
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id=' + delBut.value;
-						req.open('GET', url, true);
-						req.addEventListener('load', function()
+						delReq.open('GET', url, true);
+						delReq.addEventListener('load', function()
 						{
-							if(req.status >= 200 && req.status < 400)
+							if(delReq.status >= 200 && delReq.status < 400)
 							{
 								document.body.removeChild;
 								console.log("Great, deleted row");
@@ -211,7 +213,7 @@ function buttonAssign()
 							}
 						});
 						
-						req.send(null);
+						delReq.send(null);
 						//event.preventDefault();	
 						
 					}
