@@ -119,6 +119,7 @@ console.log("gets into drawTable at least");
 				deleteButton.className="deleteButton";
 				editButton.className="editButton";
 				
+				deleteButton.onclick="deleteRow(3)";
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
 				buttonRow.appendChild(editButton);
@@ -126,7 +127,6 @@ console.log("gets into drawTable at least");
 console.log("hidden for delete is: ", hidDeleteID.value);
 				newBody.appendChild(buttonRow);
 				
-				// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
 			
 				
 			}
@@ -150,45 +150,10 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 	event.preventDefault();	
 }
 
-
-
-function assignDeleteButtons()
+function deleteRow(id)
 {
-	var deleteButtons = document.getElementsByClassName("deleteButton");
-	console.log("Delete Buttons is length: ", deleteButtons.length);
-	for(var i=0; i<deleteButtons.length; i++)
-	{
-		console.log("Adding delete function");
-		deleteButtons[i].addEventListener("click", function()
-		{
-			var dID = 2; //whatever code will get the id from the sibling
-			var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+ dID;
-			console.log("URL being sent is: ", url);
-			
-			req.open('GET', url, true);
-			req.addEventListener('load', function()
-			{
-				if(req.status >= 200 && req.status < 400)
-				{
-					console.log("good delete response");
-					drawTable();
-				}
-				
-				else
-				{
-					console.log("Looks like bad code");
-					
-				}
-			});
-
-			
-
-			req.send(null);
-			event.preventDefault();	
-		});
-		
-		
-	}
+	console.log("Dete ID passed by button was: ", id);
+	
 }
 
 		
