@@ -145,7 +145,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 	event.preventDefault();	
 }
 
-document.getElementsByClassName("deleteButton").setEventListener('click', function (event)
+document.getElementsByClassName("deleteButton").addEventListener('click', function (event)
 {
 	console.log("Event listener works for delete buttons");
 	
