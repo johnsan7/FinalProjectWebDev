@@ -154,7 +154,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 
 function deleteRow (button)
 {
-	console.log("Delete ID passed by button was: ", button.nextSibling.id);
+	console.log("Delete ID passed by button was: ", button.nextSibling.value);
 	
 };
 		
