@@ -73,7 +73,7 @@ console.log("gets into drawTable at least");
 				var nameBox = document.createElement('td');
 				nameBox.textContent=response[thing].name;
 				nextRow.appendChild(nameBox);
-				console.log("Doing name: ", response.name);
+				console.log("Doing name: ", response[thing].name);
 				var repsBox = document.createElement('td');
 				repsBox.textContent=response[thing].reps;
 				nextRow.appendChild(repsBox);
@@ -120,7 +120,7 @@ console.log("gets into drawTable at least");
 				buttonRow.appendChild(hidDeleteID);
 				buttonRow.appendChild(editButton);
 				buttonRow.appendChild(hidUpdateID);
-				
+console.log("hidden for delete is: ", hidDeleteID.value);
 				newBody.appendChild(buttonRow);
 				
 				// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
