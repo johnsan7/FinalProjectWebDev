@@ -119,7 +119,7 @@ console.log("gets into drawTable at least");
 				deleteButton.className="deleteButton";
 				editButton.className="editButton";
 				
-				deleteButton.onclick=function(){console.log("Button Clicked")};
+				deleteButton.onclick=function(){console.log("Button Clicked"); deleteRow(3)};
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
