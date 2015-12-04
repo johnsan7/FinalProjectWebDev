@@ -161,10 +161,10 @@ function assignDeleteButtons()
 		console.log("Adding delete function");
 		deleteButtons[i].addEventListener("click", function()
 		{
-			
+			var dID = 3; //whatever code will get the id from the sibling
 			var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+ dID;
 			console.log("URL being sent is: ", url);
-			var dID = 3; //whatever code will get the id from the sibling
+			
 			req.open('GET', url, true);
 			req.addEventListener('load', function()
 			{
