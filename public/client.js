@@ -152,7 +152,7 @@ console.log("gets into drawTable at least");
 							if(req.status >= 200 && req.status < 400)
 							{
 								console.log("Great, deleted row");
-								//drawTable();
+								drawTable();
 							}
 							else
 							{
