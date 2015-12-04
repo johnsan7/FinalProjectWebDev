@@ -34,8 +34,9 @@ console.log("gets into drawTable at least");
 
 	//This removes the current table if there is one
 	if(document.getElementById("dataTable"))
-	{
-		document.body.removeChild("newTable");
+	{	
+		var element = document.getElementById("dataTable");
+		element.parentNode.removeChild(element);
 		
 	}
 	
