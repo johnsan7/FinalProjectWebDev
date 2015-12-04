@@ -95,8 +95,8 @@ console.log("gets into drawTable at least");
 				//Above code adds the data row, next rows add the buttons. 
 				
 				var buttonRow = document.createElement('tr');
-				var deleteButton = document.createElement('form');
-				var editButton = document.createElement('form');
+				var deleteButton = document.createElement('button');
+				var editButton = document.createElement('button');
 				
 				var deleteText = document.createTextNode("Delete");
 				var editText = document.createTextNode("Edit");
