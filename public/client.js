@@ -37,6 +37,7 @@ console.log("gets into drawTable at least");
 	{	
 		var element = document.getElementById("dataTable");
 		element.parentNode.removeChild(element);
+		console.log("Table deleting triggered");
 		
 	}
 	
