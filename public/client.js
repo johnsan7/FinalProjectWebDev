@@ -104,7 +104,7 @@ console.log("gets into drawTable at least");
 				var hidDeleteID = document.createElement('hidden');
 				hidDeleteID.name="hidden thing";
 				hidDeleteID.value=response[thing].id;
-				
+				deleteButton.value=response[thing].id;
 				var hidUpdateID = document.createElement('hidden');
 				hidUpdateID.name="id";
 				hidUpdateID.value=response[thing].id;
@@ -154,7 +154,8 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 
 function deleteRow (button)
 {
-	console.log("Delete ID passed by button was: ", this.nextSibling.name);
+	console.log("delete button id is: ", button.value);
+	//console.log("Delete ID passed by button was: ", this.nextSibling.name);
 	//console.log("This shoudl print ids");
 	//console.log(document.getElementsByClassName("deleteButton").nextSibling.value);
 		
