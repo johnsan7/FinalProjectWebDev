@@ -150,7 +150,6 @@ console.log("gets into drawTable at least");
 					return function()
 					{
 						console.log("delete button id is: ", delBut.value);  //Note to test git. 
-						delBut.reset();
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id=' + delBut.value;
 						req.open('GET', url, true);
 						req.addEventListener('load', function()
@@ -159,7 +158,7 @@ console.log("gets into drawTable at least");
 							{
 								document.body.removeChild;
 								console.log("Great, deleted row");
-								//drawTable;
+								drawTable();
 							}
 							else
 							{
