@@ -250,9 +250,9 @@ function buttonSet()
 	subButton.onclick = function(event)
 	{
 		addReq.open('GET', subUrl, true);
-		req.addEventListener('load',function()
+		addReq.addEventListener('load',function()
 		{
-			if(req.status >= 200 && req.status < 400)
+			if(addReq.status >= 200 && addReq.status < 400)
 			{
 				console.log("Added to table successfully");
 				drawTable();
@@ -265,7 +265,7 @@ function buttonSet()
 			
 			
 		});
-		req.send(null);
+		addReq.send(null);
 		event.preventDefault();
 	};
 		
