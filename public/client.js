@@ -119,7 +119,7 @@ console.log("gets into drawTable at least");
 				deleteButton.className="deleteButton";
 				editButton.className="editButton";
 				
-				deleteButton.onclick=function(){console.log("Button Clicked"); deleteRow(3)};
+				deleteButton.onclick=function(){console.log("Button Clicked"); deleteRow()};
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
@@ -152,9 +152,9 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 }
 
 
-function deleteRow (id)
+function deleteRow ()
 {
-	console.log("Dete ID passed by button was: ", id);
+	console.log("Dete ID passed by button was: ", this.nextSibling.ID);
 	
 };
 		
