@@ -119,7 +119,7 @@ console.log("Getting to delete function");
 		  next(err);
 		  return;
 		}
-		context.results = "Updated " + result.changedRows + " rows.";
+		context.results = "Updated " + result.deletedRows + " rows.";
 		res.send(context.results);
   });
 });
