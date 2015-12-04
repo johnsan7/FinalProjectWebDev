@@ -71,7 +71,7 @@ console.log("gets into drawTable at least");
 				var nameBox = document.createElement('td');
 				nameBox.textContent=response.name;
 				nextRow.appendChild(nameBox);
-				
+				console.log("Doing name: ", response.name);
 				var repsBox = document.createElement('td');
 				repsBox.textContent=response.reps;
 				nextRow.appendChild(repsBox);
