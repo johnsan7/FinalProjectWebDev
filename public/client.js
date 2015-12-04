@@ -95,7 +95,13 @@ console.log("gets into drawTable at least");
 				//Above code adds the data row, next rows add the buttons. 
 				
 				var buttonRow = document.createElement('tr');
+				
+				
+				//This is my attempt a closure. 
 				var deleteButton = document.createElement('button');
+				
+				
+				
 				var editButton = document.createElement('button');
 				
 				//The next two blocks hopefully create hidden data items with the id that follows each button.
@@ -119,7 +125,11 @@ console.log("gets into drawTable at least");
 				deleteButton.className="deleteButton";
 				editButton.className="editButton";
 				
-				deleteButton.onclick=function(){console.log("Button Clicked"); deleteRow(deleteButton)};
+				//This sets up a closure so the correct deleteButton gets passed
+				deleteButton.onclick=function()
+				{
+					deleteRow(delBut);
+				}(deleteButton);
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
