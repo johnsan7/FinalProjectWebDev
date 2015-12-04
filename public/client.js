@@ -98,8 +98,8 @@ console.log("gets into drawTable at least");
 				var deleteButton = document.createElement('form');
 				var editButton = document.createElement('form');
 				
-				var deleteText = "Delete";
-				var editText = "Edit";
+				var deleteText = document.createTextNode("Delete");
+				var editText = document.createTextNode("Edit");
 				
 				deleteButton.appendChild(deleteText);
 				editButton.appendChild(editText);
