@@ -159,10 +159,11 @@ console.log("gets into drawTable at least");
 							{
 								document.body.removeChild;
 								console.log("Great, deleted row");
-								delBut.nextSibling.nextSibling.nextSibling.removeNode;
-								delBut.nextSibling.nextSibling.removeNode;
-								delBut.nextSibling.removeNode;
-								delBut.parentNode.removeChild(delBut);
+								console.log("Row index test, row index is:", delBut.rowIndex);
+								//delBut.nextSibling.nextSibling.nextSibling.removeNode;
+								//delBut.nextSibling.nextSibling.removeNode;
+								//delBut.nextSibling.removeNode;
+								//delBut.parentNode.removeChild(delBut);
 								//drawTable();
 							}
 							else
