@@ -157,7 +157,7 @@ function deleteRow (button)
 	console.log("Delete ID passed by button was: ", button.nextSibling.name);
 	
 };
-
+console.log("This shoudl print ids");
 console.log(document.getElementsByClassName(deleteButton).nextSibling.value);
 		
 		
