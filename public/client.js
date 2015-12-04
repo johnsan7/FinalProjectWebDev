@@ -159,6 +159,9 @@ console.log("gets into drawTable at least");
 							}
 						});
 						
+						req.send(null);
+						event.preventDefault();	
+						
 					}
 				}(deleteButton));
 				
