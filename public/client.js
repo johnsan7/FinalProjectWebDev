@@ -142,7 +142,23 @@ console.log("gets into drawTable at least");
 					return function()
 					{
 						console.log("delete button id is: ", delBut.value);  //Note to test git. 
-						drawTable();
+						
+						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id=' + delBut.value;
+						req.open('GET', url, true);
+						req.addEventListener('load', function()
+						{
+							if(req.status >= 200 && req.status < 400)
+							{
+								console.log("Great, deleted row");
+								drawTable();
+							}
+							else
+							{
+								console.log("Error deleting item, bad server response");
+								
+							}
+						});
+						
 					}
 				}(deleteButton));
 				
