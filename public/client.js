@@ -71,23 +71,23 @@ console.log("gets into drawTable at least");
 				var nextRow = document.createElement('tr');
 				
 				var nameBox = document.createElement('td');
-				nameBox.textContent=response.name;
+				nameBox.textContent=response[thing].name;
 				nextRow.appendChild(nameBox);
 				console.log("Doing name: ", response.name);
 				var repsBox = document.createElement('td');
-				repsBox.textContent=response.reps;
+				repsBox.textContent=response[thing].reps;
 				nextRow.appendChild(repsBox);
 				
 				var weightBox = document.createElement('td');
-				weightBox.textContent=response.weight;
+				weightBox.textContent=response[thing].weight;
 				nextRow.appendChild(weightBox);
 				
 				var dateBox = document.createElement('td');
-				dateBox.textContent=response.date;
+				dateBox.textContent=response[thing].date;
 				nextRow.appendChild(dateBox);
 				
 				var lbsBox = document.createElement('td');
-				lbsBox.textContent=response.lbs;
+				lbsBox.textContent=response[thing].lbs;
 				nextRow.appendChild(lbsBox);
 				
 				newBody.appendChild(nextRow);
