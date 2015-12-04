@@ -139,15 +139,14 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 			console.log("Something wrong with request, response code was: ", req.statusText);
 			
 		}
+		
+		document.getElementById("deleteButton").addEventListener('click', function (event)
+		{
+		console.log("Event listener works for delete buttons");
+		});	
 	});
 	
 	req.send(null);
 	event.preventDefault();	
 }
 
-document.getElementById("deleteButton").addEventListener('click', function (event)
-{
-	console.log("Event listener works for delete buttons");
-	
-	
-});
