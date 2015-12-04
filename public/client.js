@@ -167,7 +167,7 @@ function assignDeleteButtons()
 			req.open('GET', url, true);
 			req.addEventListener('load', function()
 			{
-				drawTable();
+				//drawTable();
 				
 			});
 
