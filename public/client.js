@@ -244,7 +244,8 @@ function buttonSet()
 {
 	document.getElementById("addSubmit");
 	console.log("Add form coopted");
-	drawTable();
+	
+	//drawTable();
 	
 }
 		
