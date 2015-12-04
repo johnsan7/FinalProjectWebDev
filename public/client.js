@@ -35,10 +35,11 @@ console.log("gets into drawTable at least");
 
 	//This removes the current table if there is one
 	if(document.getElementById("dataTable") != null)
-	{	
-		var element = document.getElementById("dataTable");
-		element.parentNode.removeChild();
+	{			
 		console.log("Table deleting triggered WANT TO BE VSISIBLE TOO MANY PRINT STATEMENTS!!!!!");
+		var eltable = document.getElementById("dataTable");
+		element.parentNode.removeChild(eltable);
+
 		
 	}
 	
