@@ -159,7 +159,11 @@ console.log("gets into drawTable at least");
 							{
 								document.body.removeChild;
 								console.log("Great, deleted row");
-								drawTable();
+								delBut.removeChild();
+								delBut.removeChild();
+								delBut.removeChild();
+								delBut.parentNode.removeChild();
+								//drawTable();
 							}
 							else
 							{
