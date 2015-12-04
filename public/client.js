@@ -163,12 +163,21 @@ function assignDeleteButtons()
 		{
 			
 			var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/delete' + '?id='+ dID;
+			console.log("URL being sent is: ", url);
 			var dID = 3; //whatever code will get the id from the sibling
 			req.open('GET', url, true);
 			req.addEventListener('load', function()
 			{
+				if(req.status >= 200 && req.status < 400)
+				{
+					console.log("good delete response");
+				}
 				//drawTable();
-				
+				else
+				{
+					console.log("Looks like bad code");
+					
+				}
 			});
 
 			
