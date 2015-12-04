@@ -103,11 +103,11 @@ console.log("gets into drawTable at least");
 				
 				var hidDeleteID = document.createElement('hidden');
 				hidDeleteID.name="id";
-				hidDeleteID.value="{{response[thing].id}}";
+				hidDeleteID.value=response[thing].id;
 				
 				var hidUpdateID = document.createElement('hidden');
 				hidUpdateID.name="id";
-				hidUpdateID.value="{{response[thing].id}}";
+				hidUpdateID.value=response[thing].id;
 
 				
 				var deleteText = document.createTextNode("Delete");
