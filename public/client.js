@@ -126,11 +126,13 @@ console.log("gets into drawTable at least");
 				editButton.className="editButton";
 				
 				//This sets up a closure so the correct deleteButton gets passed
-				deleteButton.onclick=(function(i)
+				deleteButton.onclick=(function(delBut)
 				{
-					return deleteRow(i); //Note to test git. 
-					
-				})(deleteButton);
+					return function()
+					{
+						console.log("delete button id is: ", delBut.value);  //Note to test git. 
+					}
+				}(deleteButton);
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
