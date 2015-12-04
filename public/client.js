@@ -158,6 +158,6 @@ function deleteRow (button)
 	
 };
 console.log("This shoudl print ids");
-console.log(document.getElementsByClassName(deleteButton).nextSibling.value);
+console.log(document.getElementsByClassName("deleteButton").nextSibling.value);
 		
 		
