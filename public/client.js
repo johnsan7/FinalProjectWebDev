@@ -127,6 +127,12 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 				newBody.appendChild(buttonRow);
 				
 				// This will be where we add the buttons, leaving that off for now var buttonRow = document.createElement
+				
+				document.getElementById("deleteButton").addEventListener('click', function (event)
+				{
+					console.log("Event listener works for delete buttons");
+				});	
+				
 			}
 			console.log("Done appending rows");
 			newTable.appendChild(newHead);
@@ -140,10 +146,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 			
 		}
 		
-		document.getElementById("deleteButton").addEventListener('click', function (event)
-		{
-		console.log("Event listener works for delete buttons");
-		});	
+
 	});
 	
 	req.send(null);
