@@ -242,10 +242,34 @@ function deleteRow (button)
 
 function buttonSet()
 {
-	document.getElementById("addSubmit");
-	console.log("Add form coopted");
+	var addReq = new XMLHttpRequest();
 	
-	//drawTable();
+	var subButton = document.getElementById("addSubmit");
+	var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name + '&' + 'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + lbs;
+	subButton.addEventListener("click") = function(event)
+	{
+		addReq.open('GET', subUrl, true);
+		req.addEventListener('load',function()
+		{
+			if(req.status >= 200 && req.status < 400)
+			{
+				console.log("Added to table successfully");
+				drawTable();
+			}
+			else
+			{
+				console.log("Unsuccessful add to table " + request.statusText);
+			}
+			
+			
+			
+		});
+		req.send(null);
+		event.preventDefault();
+	};
+		
+	  
+	drawTable();
 	
 }
 		
