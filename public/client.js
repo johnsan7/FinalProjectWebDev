@@ -146,7 +146,45 @@ console.log("gets into drawTable at least");
 				editButton.className="editButton";
 				
 				//This sets up a closure so the correct deleteButton gets passed
-				deleteButton.onclick=(function(delBut)
+
+				buttonRow.appendChild(deleteButton);
+				buttonRow.appendChild(hidDeleteID);
+				buttonRow.appendChild(editButton);
+				buttonRow.appendChild(hidUpdateID);
+console.log("hidden for delete is: ", hidDeleteID.value);
+				newBody.appendChild(buttonRow);
+				
+			
+				
+			}
+			console.log("Done appending rows");
+			newTable.appendChild(newHead);
+			newTable.appendChild(newBody);
+			document.body.appendChild(newTable);
+			console.log("Table actually got appended, now calling button assigner");
+			buttonAssign();
+			
+
+		}
+		else
+		{
+			console.log("Something wrong with request, response code was: ", req.status);
+			
+		}
+		
+
+	});
+	
+	req.send(null);
+	event.preventDefault();	
+}
+
+function buttonAssign()
+{
+	var deleteButtons = document.getElementsByClassName("deleteButton");
+	for(var j=0; j<deleteButtons.length; j++)
+	{
+		deleteButtons[j].onclick = (function(delBut)
 				{
 					return function()
 					{
@@ -179,36 +217,12 @@ console.log("gets into drawTable at least");
 					}
 				}(deleteButton));
 				
-				buttonRow.appendChild(deleteButton);
-				buttonRow.appendChild(hidDeleteID);
-				buttonRow.appendChild(editButton);
-				buttonRow.appendChild(hidUpdateID);
-console.log("hidden for delete is: ", hidDeleteID.value);
-				newBody.appendChild(buttonRow);
-				
-			
-				
-			}
-			console.log("Done appending rows");
-			newTable.appendChild(newHead);
-			newTable.appendChild(newBody);
-			document.body.appendChild(newTable);
-			console.log("Table actually got appended");
-
-		}
-		else
-		{
-			console.log("Something wrong with request, response code was: ", req.status);
-			
-		}
 		
-
-	});
+		
+	}
 	
-	req.send(null);
-	event.preventDefault();	
+	
 }
-
 
 function deleteRow (button)
 {
