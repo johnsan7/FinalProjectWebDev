@@ -135,7 +135,7 @@ console.log("hidden for delete is: ", hidDeleteID.value);
 			newTable.appendChild(newBody);
 			document.body.appendChild(newTable);
 			console.log("Table actually got appended");
-			assignDeleteButtons();
+			//assignDeleteButtons();
 		}
 		else
 		{
