@@ -10,7 +10,7 @@ var req = new XMLHttpRequest();
 
 console.log("Client Javascript is running");
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 document.addEventListener('DOMContentLoaded', drawTable());
 
