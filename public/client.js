@@ -116,8 +116,8 @@ console.log("gets into drawTable at least");
 				deleteButton.appendChild(deleteText);
 				editButton.appendChild(editText);
 				
-				deleteButton.class="deleteButton";
-				editButton.class="editButton";
+				deleteButton.className="deleteButton";
+				editButton.className="editButton";
 				
 				buttonRow.appendChild(deleteButton);
 				buttonRow.appendChild(hidDeleteID);
