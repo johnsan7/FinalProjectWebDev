@@ -39,6 +39,7 @@ console.log("gets into drawTable at least");
 			console.log("Request was returned");
 			console.log("Respons was: ", req.responseText);
 			var response = JSON.parse(req.responseText);
+			console.log("after parsing response was: ", response);
 			var newTable = document.createElement('table');
 			var newHead = document.createElement('thead');		//Create header
 			var newRow = document.createElement('tr');
