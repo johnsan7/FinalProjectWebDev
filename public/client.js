@@ -243,9 +243,10 @@ function deleteRow (button)
 function buttonSet()
 {
 	var addReq = new XMLHttpRequest();
+	var formData = document.getElementById('addForm');
 	
 	var subButton = document.getElementById("addSubmit");
-	var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name + '&' +  '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + lbs;
+	var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + formData.name + '&' +  'reps=' + formData.reps + '&' + 'weight=' + formData.weight +  '&' + 'date=' + formData.date +'&' + 'lbs=' + formData.lbs;
 	subButton.addEventListener("click") = function(event)
 	{
 		addReq.open('GET', subUrl, true);
@@ -272,4 +273,3 @@ function buttonSet()
 	drawTable();
 	
 }
-		//'reps=' + reps +
