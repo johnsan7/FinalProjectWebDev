@@ -164,12 +164,12 @@ console.log("gets into drawTable at least");
 								//delBut.nextSibling.nextSibling.removeNode;
 								//delBut.nextSibling.removeNode;
 								//delBut.parentNode.removeChild(delBut);
-								//drawTable();
+								return drawTable();
 							}
 							else
 							{
 								console.log("Error deleting item, bad server response");
-								
+								return;
 							}
 						});
 						
