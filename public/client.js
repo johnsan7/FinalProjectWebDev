@@ -237,21 +237,25 @@ function buttonAssign()
 					return function()
 					{
 						var updateReq = new XMLHttpRequest();
-						/*
-						if(document.getElementById('dataTable').hasChildNodes())
-						{
-							console.log("is this happenig once?");
-							var onlyChild = document.getElementById('dataTable').firstChild;
-							document.getElementById('dataTable').removeChild(onlyChild);
-							
-						}
-						*/
+						
+
+						
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/generate-update-form-data' + '?id=' + edBut.value;
 						updateReq.open('GET', url, true);
 						updateReq.addEventListener('load', function()
 						{
 							if(updateReq.status >= 200 && updateReq.status < 400)
 							{
+								
+								if(document.getElementById('dataTable').hasChildNodes())
+								{
+									console.log("is this happenig once?");
+									var onlyChild = document.getElementById('dataTable').firstChild;
+									document.getElementById('dataTable').removeChild(onlyChild);
+							
+								}
+						
+						
 								console.log("getting into response");
 								var editResponse = JSON.parse(updateReq.responseText);
 								
