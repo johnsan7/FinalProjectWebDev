@@ -16,8 +16,12 @@ console.log("Client Javascript is running");
 //app.use(express.static('public'));
 
 document.addEventListener('DOMContentLoaded', buttonSet);
-document.addEventListener('DOMContentLoaded', drawTable);
-
+document.addEventListener('DOMContentLoaded', function()
+		{
+			console.log("DOMLoading table draw called -------------------------------------------------------");
+			drawTable;
+		});
+			
 //First we will reset the database. When this loads, it will simply draw the table. 
 
 function reset_table()
