@@ -289,7 +289,7 @@ function buttonAssign()
 							}
 						});
 						
-						delReq.send(null);
+						updateReq.send(null);
 						//event.preventDefault();	
 						
 					}
