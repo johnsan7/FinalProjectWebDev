@@ -244,9 +244,9 @@ function buttonSet()
 {
 	var addReq = new XMLHttpRequest();
 	
-	var formData = document.getElementById('addForm');
+	var name = document.getElementById('nameVal').value;
 	var subButton = document.getElementById("addSubmit");
-	console.log("Form data name", formData.name);
+	console.log("Form data name", name.value);
 	var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + formData.name + '&' +  'reps=' + formData.reps + '&' + 'weight=' + formData.weight +  '&' + 'date=' + formData.date +'&' + 'lbs=' + formData.lbs;
 
 	subButton.onclick = function(event)
