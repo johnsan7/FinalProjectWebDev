@@ -126,7 +126,7 @@ console.log("Getting to delete function");
 
 app.get('/generate-update-form-data',function(req,res,next){
 console.log("Getting to request for form building data function");	
-	var context = {};
+
 	pool.query("SELECT id, name, reps, weight, date, lbs FROM workouts WHERE id=? ",
 		[req.query.id],
 		function(err, rows, fields){
@@ -134,7 +134,6 @@ console.log("Getting to request for form building data function");
 		  next(err);
 		  return;
 		}
-		context.results = "Sent info for form";
 		res.setHeader('Content-Type', 'application/json');
 		res.send(JSON.stringify(rows));
 		
