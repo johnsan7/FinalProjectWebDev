@@ -275,8 +275,15 @@ function buttonAssign()
 								
 								
 								fieldsetEditForm.appendChild(nameInput);
-								
+								fieldsetEditForm.appendChild(repsInput);
+								fieldsetEditForm.appendChild(weightInput);
+								fieldsetEditForm.appendChild(dateInput);
+								fieldsetEditForm.appendChild(editSubmit);
 
+								editForm.appendChild(fieldsetEditForm);
+								
+								document.getElementById('dataTable').appendChild(editForm);
+								
 								//This is too complicated to do the option for lbs right now, I am coming back to that part
 								
 
