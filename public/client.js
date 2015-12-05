@@ -240,6 +240,7 @@ function buttonAssign()
 						
 						if(document.getElementById('dataTable').hasChildNodes())
 						{
+							console.log("is this happenig once?");
 							var onlyChild = document.getElementById('dataTable').firstChild;
 							document.getElementById('dataTable').removeChild(onlyChild);
 							
