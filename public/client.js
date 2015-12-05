@@ -252,7 +252,7 @@ function buttonSet()
 	{
 	
 		var name = document.getElementById('nameVal').value;
-		console.log("Form data name", name.value);
+		console.log("Form data name", name);
 		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name // + '&' +  'reps=' + formData.reps + '&' + 'weight=' + formData.weight +  '&' + 'date=' + formData.date +'&' + 'lbs=' + formData.lbs;
 
 		addReq.open('GET', subUrl, true);
