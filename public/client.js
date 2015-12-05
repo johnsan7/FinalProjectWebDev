@@ -237,7 +237,7 @@ function buttonAssign()
 					return function()
 					{
 						var updateReq = new XMLHttpRequest();
-						
+						/*
 						if(document.getElementById('dataTable').hasChildNodes())
 						{
 							console.log("is this happenig once?");
@@ -245,7 +245,7 @@ function buttonAssign()
 							document.getElementById('dataTable').removeChild(onlyChild);
 							
 						}
-						
+						*/
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/generate-update-form-data' + '?id=' + edBut.value;
 						updateReq.open('GET', url, true);
 						updateReq.addEventListener('load', function()
