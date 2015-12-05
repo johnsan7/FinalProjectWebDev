@@ -253,15 +253,19 @@ function buttonAssign()
 								editForm.id = edBut.value;
 								
 								var fieldsetEditForm = document.createElement('fieldset');
+								
 								var nameInput = document.createElement('input');
 								nameInput.type = 'text';
 								nameInput.value = editResponse.name;
+								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
 								repsInput.value = editResponse.reps;
+								
 								var weightInput = document.createElement('input');
 								weightInput.type = 'number';
 								weightInput.value = editResponse.weight;
+								
 								var dateInput = document.createElement('input');
 								dateInput.type = 'date';
 								dateInput.value = editResponse.date;
@@ -270,14 +274,14 @@ function buttonAssign()
 								editSubmit.id = 'submitEditForm';
 								
 								
-								//editForm.appendChild('nameInput');
+								editForm.appendChild('nameInput');
 								//editForm.appendChild('repsInput');
 								//editForm.appendChild('weightInput')
 								//editForm.appendChild('dateInput')
 								
 								//editForm.appendChild('fieldsetEditForm');
 								
-								document.getElementById("dataTable").appendChild('editForm');
+								//document.getElementById("dataTable").appendChild('editForm');
 
 								//This is too complicated to do the option for lbs right now, I am coming back to that part
 								
