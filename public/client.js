@@ -205,7 +205,7 @@ function buttonAssign()
 								//delBut.nextSibling.removeNode;
 								//delBut.parentNode.removeChild(delBut);
 								console.log("Drawing table in button Assign --------------------------------------------------------------")
-								//drawTable();
+								drawTable();
 							}
 							else
 							{
