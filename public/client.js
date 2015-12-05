@@ -267,7 +267,7 @@ function buttonAssign()
 								var editSubmit = document.createElement('submit');
 								editSubmit.id = 'submitEditForm';
 								
-								document.getElementById('dataTable').appendChild('editForm');
+								document.getElementById("dataTable").appendChild('editForm');
 								
 								editForm.appendChild('fieldsetEditForm');
 								fieldsetEditForm.appendChild('nameInput');
