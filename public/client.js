@@ -270,12 +270,12 @@ function buttonAssign()
 								editSubmit.id = 'submitEditForm';
 								
 								
-								editForm.appendChild('nameInput');
-								editForm.appendChild('repsInput');
-								editForm.appendChild('weightInput')
-								editForm.appendChild('dateInput')
+								//editForm.appendChild('nameInput');
+								//editForm.appendChild('repsInput');
+								//editForm.appendChild('weightInput')
+								//editForm.appendChild('dateInput')
 								
-								editForm.appendChild('fieldsetEditForm');
+								//editForm.appendChild('fieldsetEditForm');
 								
 								document.getElementById("dataTable").appendChild('editForm');
 
