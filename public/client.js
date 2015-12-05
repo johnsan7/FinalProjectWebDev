@@ -161,8 +161,7 @@ console.log("gets into drawTable at least");
 			}
 			newTable.appendChild(newHead);
 			newTable.appendChild(newBody);
-			var endTable = new document.createElement('/table');
-			newTable.appendChild(endTable);
+
 			document.body.appendChild(newTable);
 
 			buttonAssign();
@@ -263,6 +262,10 @@ function buttonAssign()
 								
 								console.log("here is the response name", editResponse[0].name);
 								
+								var efDiv = document.createElement('div');
+								
+								efDiv.id = 'updateDiv';
+				
 								var editForm = document.createElement('form');
 								editForm.id = edBut.value;
 								editForm.name="editTableClass";
@@ -294,10 +297,12 @@ function buttonAssign()
 								fieldsetEditForm.appendChild(weightInput);
 								fieldsetEditForm.appendChild(dateInput);
 								fieldsetEditForm.appendChild(editSubmit);
-
+								
 								editForm.appendChild(fieldsetEditForm);
 								
-								document.getElementById('dataTable').appendChild(editForm);
+								efDiv.appendChild(editForm);
+								
+								document.getElementById('dataTable').appendChild(efDiv);
 								
 								//This is too complicated to do the option for lbs right now, I am coming back to that part
 								
