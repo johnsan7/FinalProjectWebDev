@@ -240,7 +240,7 @@ function buttonAssign()
 						
 						if(document.getElementById('dataTable').hasChildNodes())
 						{
-							document.getElementById('dataTable').removeChild;
+							document.getElementById('dataTable').removeChild(document.getElementById('dataTable').firstChild);
 							
 						}
 						
