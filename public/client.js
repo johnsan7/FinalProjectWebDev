@@ -213,6 +213,7 @@ function buttonAssign()
 								//delBut.nextSibling.nextSibling.removeNode;
 								//delBut.nextSibling.removeNode;
 								//delBut.parentNode.removeChild(delBut);
+								console.log("Drawing table in button Assign --------------------------------------------------------------")
 								drawTable();
 							}
 							else
@@ -278,7 +279,7 @@ function buttonSet()
 		{
 			if(addReq.status >= 200 && addReq.status < 400)
 			{
-				console.log("Added to table successfully");
+				console.log("Drawing table in add --------------------------------------------------------------------------------");
 				drawTable();
 			}
 			else
