@@ -244,7 +244,7 @@ function buttonAssign()
 						{
 							if(updateReq.status >= 200 && updateReq.status < 400)
 							{
-								
+								console.log("getting into response");
 								var editResponse = JSON.parse(updateReq.responseText);
 								
 								var editForm = document.createElement('form');

@@ -129,13 +129,15 @@ console.log("Getting to request for form building data function");
 	var context = {};
 	pool.query("SELECT id, name, reps, weight, date, lbs FROM workouts WHERE id=? ",
 		[req.query.id],
-		function(err, result){
+		function(err, rows, fields){
 		if(err){
 		  next(err);
 		  return;
 		}
 		context.results = "Sent info for form";
-		res.send(context.results);
+		res.setHeader('Content-Type', 'application/json');
+		res.send(JSON.stringify(rows));
+		
   });
 });
 
