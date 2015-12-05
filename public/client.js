@@ -247,6 +247,8 @@ function buttonAssign()
 								console.log("getting into response");
 								var editResponse = JSON.parse(updateReq.responseText);
 								
+								console.log("here is the response", editResponse);
+								
 								var editForm = document.createElement('form');
 								editForm.id = edBut.value;
 								
