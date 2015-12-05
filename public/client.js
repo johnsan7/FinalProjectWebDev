@@ -238,9 +238,7 @@ function buttonAssign()
 					{
 						var updateReq = new XMLHttpRequest();
 						
-						var existingForm = document.getElementById('dataTable').nextSibling;
-						
-						if(existingForm)
+						if(document.getElementById('dataTable').hasChildNodes())
 						{
 							console.log("donkeys");
 							
