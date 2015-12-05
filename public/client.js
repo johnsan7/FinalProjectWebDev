@@ -268,10 +268,10 @@ function buttonAssign()
 								editSubmit.id = 'submitEditForm';
 								
 								
-								fieldsetEditForm.appendChild('nameInput');
-								fieldsetEditForm.appendChild('repsInput');
-								fieldsetEditForm.appendChild('weightInput')
-								fieldsetEditForm.appendChild('dateInput')
+								editForm.appendChild('nameInput');
+								editForm.appendChild('repsInput');
+								editForm.appendChild('weightInput')
+								editForm.appendChild('dateInput')
 								
 								editForm.appendChild('fieldsetEditForm');
 								
