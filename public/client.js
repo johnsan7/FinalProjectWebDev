@@ -238,19 +238,13 @@ function buttonAssign()
 					{
 						var updateReq = new XMLHttpRequest();
 						
-						//If another form exists, delete it
-							if(document.getElementsByClassName("editTableClass") != null)
-							{			
-								
-								var oldtable = document.getElementsByClassName("editTableClass");
-								for(var thing in oldtable)
-								{
-									oldtable[thing].parentNode.removeChild(oldtable[thing]);	
-								}
-								
-
-							}
+						var existingForm = document.getElementById('dataTable').nextSibling;
 						
+						if(existingForm)
+						{
+							console.log("donkeys");
+							
+						}
 						
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/generate-update-form-data' + '?id=' + edBut.value;
 						updateReq.open('GET', url, true);
@@ -265,7 +259,7 @@ function buttonAssign()
 								
 								var editForm = document.createElement('form');
 								editForm.id = edBut.value;
-								editForm.class="editTableClass";
+								editForm.name="editTableClass";
 								
 								var fieldsetEditForm = document.createElement('fieldset');
 								
