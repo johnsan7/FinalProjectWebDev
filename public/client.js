@@ -18,8 +18,8 @@ console.log("Client Javascript is running");
 document.addEventListener('DOMContentLoaded', buttonSet);
 document.addEventListener('DOMContentLoaded', function()
 		{
-			console.log("DOMLoading table draw called -------------------------------------------------------");
-			drawTable;
+			console.log("DOM DRAW called ------------------------------------------------")
+			drawTable();
 		});
 			
 //First we will reset the database. When this loads, it will simply draw the table. 
@@ -29,7 +29,7 @@ function reset_table()
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/reset-table', true);
 	req.addEventListener('load', function()
 	{
-		drawTable;
+		drawTable();
 	});
 }
 //This is the basic code of the game. 
