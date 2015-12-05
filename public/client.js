@@ -37,12 +37,20 @@ console.log("gets into drawTable at least");
 	//This removes the current table if there is one
 	if(document.getElementById("dataTable") != null)
 	{			
+		if(document.getElementById('dataTable').hasChildNodes())
+		{
+			console.log("is this happenig once?");
+			var onlyChild = document.getElementById('dataTable').firstChild;
+			document.getElementById('dataTable').removeChild(onlyChild);
+							
+		}
+		
 		console.log("Table deleting triggered -------------------------------------------------------------------------------------------------");
 		var eltable = document.getElementById("dataTable");
 		eltable.parentNode.removeChild(eltable);
-
 		
 	}
+	
 	
 	req.open('GET', 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/tables', true);
 	req.addEventListener('load', function()
@@ -246,7 +254,7 @@ function buttonAssign()
 						{
 							if(updateReq.status >= 200 && updateReq.status < 400)
 							{
-								
+								/*
 								if(document.getElementById('dataTable').hasChildNodes())
 								{
 									console.log("is this happenig once?");
@@ -254,7 +262,7 @@ function buttonAssign()
 									document.getElementById('dataTable').removeChild(onlyChild);
 							
 								}
-						
+								*/
 						
 								console.log("getting into response");
 								var editResponse = JSON.parse(updateReq.responseText);
