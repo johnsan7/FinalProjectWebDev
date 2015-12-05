@@ -239,16 +239,13 @@ function deleteRow (button)
 function buttonSet()
 {
 
-
+	var subButton = document.getElementById("addSubmit");
 	
 	subButton.onclick = function(event)
 	{
 	
 		var addReq = new XMLHttpRequest();
 	
-
-		var subButton = document.getElementById("addSubmit");
-		
 		var name = document.getElementById('nameVal').value;
 		var reps = document.getElementById('repsVal').value;
 		var weight = document.getElementById('weightVal').value;
