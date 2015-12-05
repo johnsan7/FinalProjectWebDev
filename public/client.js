@@ -252,8 +252,22 @@ function buttonSet()
 	{
 	
 		var name = document.getElementById('nameVal').value;
+		var reps = document.getElementById('repsVal').value;
+		var weight = document.getElementById('weightVal').value;
+		var date = document.getElementById('dateVal').value;
+		var lbs;
+		
+		if(document.getElementById('lbsYes').checked)
+		{
+			lbs=1;
+			
+		}
+		else
+		{
+			lbs=0;
+		}
 		console.log("Form data name", name);
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name // + '&' +  'reps=' + formData.reps + '&' + 'weight=' + formData.weight +  '&' + 'date=' + formData.date +'&' + 'lbs=' + formData.lbs;
+		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + lbs;
 
 		addReq.open('GET', subUrl, true);
 		addReq.addEventListener('load',function()
