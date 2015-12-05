@@ -245,7 +245,7 @@ function buttonAssign()
 								var oldtable = document.getElementsByClassName("editTableClass");
 								for(var thing in oldtable)
 								{
-									oldtable[thing].parentNode.removeChild(oldtable);	
+									oldtable[thing].parentNode.removeChild(oldtable[thing]);	
 								}
 								
 
