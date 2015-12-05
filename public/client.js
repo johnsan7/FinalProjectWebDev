@@ -275,7 +275,7 @@ function buttonSet()
 			if(addReq.status >= 200 && addReq.status < 400)
 			{
 				console.log("Added to table successfully");
-				drawTable();
+				//drawTable();
 			}
 			else
 			{
