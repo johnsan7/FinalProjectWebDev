@@ -124,6 +124,21 @@ console.log("Getting to delete function");
   });
 });
 
+app.get('/generate-update-form-data',function(req,res,next){
+console.log("Getting to request for form building data function");	
+	var context = {};
+	pool.query("SELECT id, name, reps, weight, date, lbs FROM workouts WHERE id=? ",
+		[req.query.id],
+		function(err, result){
+		if(err){
+		  next(err);
+		  return;
+		}
+		context.results = "Sent info for form";
+		res.send(context.results);
+  });
+});
+
 
 
 //These next two are right from the lectures

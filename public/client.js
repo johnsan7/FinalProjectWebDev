@@ -132,10 +132,11 @@ console.log("gets into drawTable at least");
 				hidDeleteID.name="hidden thing";
 				hidDeleteID.value=response[thing].id;
 				deleteButton.value=response[thing].id;
+				
 				var hidUpdateID = document.createElement('hidden');
 				hidUpdateID.name="id";
 				hidUpdateID.value=response[thing].id;
-
+				editButton.value=response[thing].id;
 				
 				var deleteText = document.createTextNode("Delete");
 				var editText = document.createTextNode("Edit");
@@ -182,7 +183,7 @@ console.log("gets into drawTable at least");
 function buttonAssign()
 {
 	var delReq = new XMLHttpRequest();
-
+//This sets up the delete buttons
 	var deleteButtons = document.getElementsByClassName("deleteButton");
 	for(var j=0; j<deleteButtons.length; j++)
 	{
@@ -219,6 +220,80 @@ function buttonAssign()
 						
 					}
 				}(deleteButtons[j]));
+				
+		
+		
+	}
+//This sets up the edit buttons
+
+	var updateReq = new XMLHttpRequest();
+	var editButtons = document.getElementsByClassName("editButton");
+	for(var j=0; j<editButtons.length; j++)
+	{
+		//This assigns to every delete Button a function where it will draw a little form after the table, that form will let you enter the new info and click update. Update will send a
+		//get request to simple-update, then it will redraw table. 
+		editButtons[j].onclick = (function(edBut)
+				{
+					return function()
+					{
+						
+						
+						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/generate-update-form-data' + '?id=' + edBut.value;
+						updateReq.open('GET', url, true);
+						updateReq.addEventListener('load', function()
+						{
+							if(updateReq.status >= 200 && updateReq.status < 400)
+							{
+								
+								var editResponse = JSON.parse(updateReq.responseText);
+								
+								var editForm = document.createElement('form');
+								editForm.id = edBut.value;
+								
+								var fieldsetEditForm = document.createElement('fieldset');
+								var nameInput = document.createElement('input');
+								nameInput.type = 'text';
+								nameInput.value = editResponse.name;
+								var repsInput = document.createElement('input');
+								repsInput.type = 'number';
+								repsInput.value = editResponse.reps;
+								var weightInput = document.createElement('input');
+								weightInput.type = 'number';
+								weightInput.value = editResponse.weight;
+								var dateInput = document.createElement('input');
+								dateInput.type = 'date';
+								dateInput.value = editResponse.date;
+								
+								var editSubmit = document.createElement('submit');
+								editSubmit.id = 'submitEditForm';
+								
+								document.getElementById('dataTable').appendChild('editForm');
+								
+								editForm.appendChild('fieldsetEditForm');
+								fieldsetEditForm.appendChild('nameInput');
+								nameInput.appendChild('repsInput');
+								repsInput.appendChild('weightInput');
+								weightInput.appendChild('dateInput');
+								dateInput.appendChild('editSubmit');
+								
+								//This is too complicated to do the option for lbs right now, I am coming back to that part
+								
+
+
+
+							}
+							else
+							{
+								console.log("Error deleting item, bad server response");
+
+							}
+						});
+						
+						delReq.send(null);
+						//event.preventDefault();	
+						
+					}
+				}(editButtons[j]));
 				
 		
 		
