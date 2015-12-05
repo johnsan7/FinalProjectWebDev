@@ -226,7 +226,7 @@ function buttonAssign()
 	}
 //This sets up the edit buttons
 
-	var updateReq = new XMLHttpRequest();
+
 	var editButtons = document.getElementsByClassName("editButton");
 	for(var j=0; j<editButtons.length; j++)
 	{
@@ -236,7 +236,7 @@ function buttonAssign()
 				{
 					return function()
 					{
-						
+						var updateReq = new XMLHttpRequest();
 						
 						var url = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/generate-update-form-data' + '?id=' + edBut.value;
 						updateReq.open('GET', url, true);
