@@ -322,7 +322,7 @@ function buttonAssign()
 
 							}
 						});
-						
+						console.log("Sending update request");
 						updateReq.send(null);
 						event.preventDefault();	
 						
