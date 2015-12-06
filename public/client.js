@@ -380,7 +380,8 @@ function editFormCatcher()
 		{
 			if(editReq.status >= 200 && editReq.status < 400)
 			{
-				console.log("Drawing table in edit  --------------------------------------------------------------------------------");
+				var delNode = document.getElementById('updateDiv');
+				document.body.removeChild(delNode);
 				drawTable();
 			}
 			else
