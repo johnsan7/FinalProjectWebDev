@@ -252,7 +252,7 @@ function buttonAssign()
 								{
 									console.log("is this happenig once?");
 									var delNode = document.getElementById('updateDiv');
-									document.documentElement.removeChild(delNode);
+									document.body.removeChild(delNode);
 									
 									//document.getElementById('efDiv').removeChild(onlyChild);
 							
