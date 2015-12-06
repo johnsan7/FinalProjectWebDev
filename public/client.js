@@ -412,7 +412,7 @@ function editFormCatcher()
 		event.preventDefault();
 	});
 	
-		convert yyyy-mm-ddT00:00:00 to yyyy-mm-dd
+
 	
 }
 
