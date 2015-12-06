@@ -104,6 +104,7 @@ app.get('/simple-update',function(req,res,next){
       next(err);
       return;
     }
+	console.log("Update successful -------------------------------------------------------------------------")
     context.results = "Updated " + result.changedRows + " rows.";
     res.send(context.results);
   });
