@@ -355,7 +355,7 @@ function editFormCatcher()
 		var weight = document.getElementById('editWeight').value;
 		var date = document.getElementById('editDate').value;
 		var editID = document.getElementsByClassName('editTableClass');
-		var submitID = editID[0].id;
+		var finalID = editID[0].id;
 		/*
 		var lbs;
 		
