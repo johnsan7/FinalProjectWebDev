@@ -279,9 +279,9 @@ function buttonAssign()
 								nameInput.value = editResponse[0].name;
 								nameInput.id = 'editName';
 								
-								enTitle.textContent = 'Name';			
+								nameInput.textContent = 'Name';			
 								
-								enTitle.appendChild(nameTitle);
+								
 								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
