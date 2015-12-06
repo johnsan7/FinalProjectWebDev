@@ -276,19 +276,23 @@ function buttonAssign()
 								
 								var nameInput = document.createElement('input');
 								nameInput.type = 'text';
-								nameInput.value = editResponse.name;
+								nameInput.value = name;
+								nameInput.defaultValue = editResponse.name;
 								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
-								repsInput.value = editResponse.reps;
+								repsInput.value = reps;
+								repsInput.defaultValue = editResponse.reps;
 								
 								var weightInput = document.createElement('input');
 								weightInput.type = 'number';
-								weightInput.value = editResponse.weight;
+								weightInput.value = weight;
+								weightInput.defaultValue = editResponse.weight;
 								
 								var dateInput = document.createElement('input');
 								dateInput.type = 'date';
-								dateInput.value = editResponse.date;
+								dateInput.value = date;
+								dateInput.defaultValue = editResponse.date;
 								
 								var editSubmit = document.createElement('button');
 								editSubmit.id = 'submitEditForm';
@@ -331,16 +335,60 @@ function buttonAssign()
 	
 	
 }
-
-function deleteRow (button)
+/*
+function editFormCatcher()
 {
-	console.log("delete button id is: ", button.value);
-	//console.log("Delete ID passed by button was: ", this.nextSibling.name);
-	//console.log("This shoudl print ids");
-	//console.log(document.getElementsByClassName("deleteButton").nextSibling.value);
-		
-};
 
+	var subButton = document.getElementById("addSubmit");
+	
+	subButton.onclick = function(event)
+	{
+	
+		var addReq = new XMLHttpRequest();
+	
+		var name = document.getElementById('nameVal').value;
+		var reps = document.getElementById('repsVal').value;
+		var weight = document.getElementById('weightVal').value;
+		var date = document.getElementById('dateVal').value;
+		var lbs;
+		
+		if(document.getElementById('lbsYes').checked)
+		{
+			lbs=1;
+			
+		}
+		else
+		{
+			lbs=0;
+		}
+		console.log("Form data name", name);
+		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + lbs;
+
+		addReq.open('GET', subUrl, true);
+		addReq.addEventListener('load',function()
+		{
+			if(addReq.status >= 200 && addReq.status < 400)
+			{
+				console.log("Drawing table in add --------------------------------------------------------------------------------");
+				drawTable();
+			}
+			else
+			{
+				console.log("Unsuccessful add to table " + request.statusText);
+			}
+			
+			
+			
+		});
+		addReq.send(null);
+		event.preventDefault();
+	};
+	
+	  
+	
+}
+
+*/
 function buttonSet()
 {
 
