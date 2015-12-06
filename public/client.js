@@ -368,12 +368,10 @@ function editFormCatcher()
 		var weight = document.getElementById('editWeight').value;
 		var date = document.getElementById('editDate').value;
 
-<<<<<<< HEAD
+
 		var editID = document.getElementsByClassName('editTableClass');
 		var submitID = editID[0].id;
 
-=======
->>>>>>> parent of 1ca4ca3... asdasd
 		/*
 		var lbs;
 		
@@ -391,13 +389,7 @@ function editFormCatcher()
 		var lbs = 1;
 		
 		console.log("Form data name", name);
-<<<<<<< HEAD
-<<<<<<< HEAD
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + submitID;
 
-=======
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + editID;
->>>>>>> parent of 1ca4ca3... asdasd
 
 		editReq.open('GET', subUrl, true);
 		editReq.addEventListener('load',function()
@@ -494,7 +486,10 @@ function buttonSet()
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 703b1b2... asd
 /*
 Backup of function while I monkey with 
 function buttonSet()
@@ -549,5 +544,9 @@ function buttonSet()
 	  
 	
 }
+<<<<<<< HEAD
+*/
+>>>>>>> parent of 703b1b2... asd
+=======
 */
 >>>>>>> parent of 703b1b2... asd
