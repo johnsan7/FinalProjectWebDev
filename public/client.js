@@ -278,6 +278,7 @@ function buttonAssign()
 								nameInput.type = 'text';
 								nameInput.value = editResponse[0].name;
 								nameInput.id = 'editName';
+								nameInput.innerHTML='Name';
 								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
