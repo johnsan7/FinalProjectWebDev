@@ -290,9 +290,9 @@ function buttonAssign()
 								dateInput.type = 'date';
 								dateInput.value = editResponse.date;
 								
-								var editSubmit = document.createElement('submit');
+								var editSubmit = document.createElement('button');
 								editSubmit.id = 'submitEditForm';
-								
+								editSubmit.innerHTML = 'Submit';
 								
 								fieldsetEditForm.appendChild(nameInput);
 								fieldsetEditForm.appendChild(repsInput);
