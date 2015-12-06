@@ -303,7 +303,7 @@ function buttonAssign()
 								dateInput.value = editResponse[0].date;
 								dateInput.id = 'editDate';
 								
-								var edDateTitle = document.createTextNode('Date:');
+								var edDateTitle = document.createTextNode('Date:, if you enter no date, it will be updated to null');
 								
 								var radio1 = document.createElement('input');
 								radio1.type = 'radio';
@@ -332,7 +332,7 @@ function buttonAssign()
 								fieldsetEditForm.appendChild(repsInput);
 								fieldsetEditForm.appendChild(edWeightTitle);
 								fieldsetEditForm.appendChild(weightInput);
-								fieldsetEditForm.appendChild(edDateTitle);
+
 								
 								fieldsetEditForm.appendChild(dateInput);
 								
@@ -343,6 +343,7 @@ function buttonAssign()
 								
 								fieldsetEditForm.appendChild(edlbsNoTitle);
 								fieldsetEditForm.appendChild(radio2);
+								fieldsetEditForm.appendChild(edDateTitle);
 								fieldsetEditForm.appendChild(dateInput);
 								fieldsetEditForm.appendChild(editSubmit);
 								
