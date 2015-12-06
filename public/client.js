@@ -248,7 +248,7 @@ function buttonAssign()
 							if(updateReq.status >= 200 && updateReq.status < 400)
 							{
 								
-								if(document.getElementById('dataTable').hasChildNodes())
+								if(document.getElementById('updateDiv'))
 								{
 									console.log("is this happenig once?");
 									var delNode = document.getElementById('updateDiv');
