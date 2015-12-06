@@ -323,7 +323,7 @@ function buttonAssign()
 							}
 						});
 						
-						updateReq.send(null);
+						//updateReq.send(null);
 						//event.preventDefault();	
 						
 					}
