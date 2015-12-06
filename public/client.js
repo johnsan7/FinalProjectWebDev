@@ -294,7 +294,7 @@ function buttonAssign()
 								dateInput.value = editResponse[0].date;
 								dateInput.id = 'editDate';
 								
-								var editSubmit = document.createElement('button');
+								var editSubmit = document.createElement('submit');
 								editSubmit.id = 'submitEditForm';
 								editSubmit.innerHTML = 'Submit';
 								
@@ -337,7 +337,7 @@ function buttonAssign()
 }
 
 
-function editFormCatcher(event)
+function editFormCatcher()
 {
 	
 	console.log("Got into form catcher ------------------------------------------------------------------------------------------------------")
@@ -379,7 +379,7 @@ function editFormCatcher(event)
 		{
 			if(editReq.status >= 200 && editReq.status < 400)
 			{
-				console.log("Drawing table in add --------------------------------------------------------------------------------");
+				console.log("Drawing table in edit  --------------------------------------------------------------------------------");
 				drawTable();
 			}
 			else
