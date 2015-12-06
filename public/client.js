@@ -337,7 +337,7 @@ function buttonAssign()
 }
 
 
-function editFormCatcher()
+function editFormCatcher(event)
 {
 	
 	console.log("Got into form catcher ------------------------------------------------------------------------------------------------------")
