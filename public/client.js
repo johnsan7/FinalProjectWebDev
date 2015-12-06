@@ -323,8 +323,8 @@ function buttonAssign()
 							}
 						});
 						
-						//updateReq.send(null);
-						//event.preventDefault();	
+						updateReq.send(null);
+						event.preventDefault();	
 						
 					}
 				}(editButtons[j]));
