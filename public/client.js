@@ -345,7 +345,7 @@ function editFormCatcher()
 
 	var editButton = document.getElementById("submitEditForm");
 	
-	editButton.addEventListener('click', = function(event)
+	editButton.addEventListener('click', function(event)
 	{
 		console.log("This should be here for edit button if it is working ");
 		var editReq = new XMLHttpRequest();
