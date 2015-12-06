@@ -270,29 +270,29 @@ function buttonAssign()
 				
 								var editForm = document.createElement('form');
 								editForm.id = edBut.value;
-								editForm.name="editTableClass";
+								editForm.class="editTableClass";
 								
 								var fieldsetEditForm = document.createElement('fieldset');
 								
 								var nameInput = document.createElement('input');
 								nameInput.type = 'text';
 								nameInput.value = editResponse[0].name;
-								//nameInput.defaultValue = editResponse[0].name;
+								nameInput.id = 'editName';
 								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
 								repsInput.value = editResponse[0].reps;
-								//repsInput.defaultValue = editResponse[0].reps;
+								repsInput.id = 'editReps';
 								
 								var weightInput = document.createElement('input');
 								weightInput.type = 'number';
 								weightInput.value = editResponse[0].weight;
-								//weightInput.defaultValue = editResponse[0].weight;
+								weightInput.id = 'editWeight';
 								
 								var dateInput = document.createElement('input');
 								dateInput.type = 'date';
 								dateInput.value = editResponse[0].date;
-								//dateInput.defaultValue = editResponse[0].date;
+								dateInput.id = 'editDate';
 								
 								var editSubmit = document.createElement('button');
 								editSubmit.id = 'submitEditForm';
@@ -335,21 +335,25 @@ function buttonAssign()
 	
 	
 }
-/*
+
+
 function editFormCatcher()
 {
 
-	var subButton = document.getElementById("addSubmit");
+	var editButton = document.getElementById("submitEditForm");
 	
-	subButton.onclick = function(event)
+	editButton.onclick = function(event)
 	{
 	
 		var addReq = new XMLHttpRequest();
 	
-		var name = document.getElementById('nameVal').value;
-		var reps = document.getElementById('repsVal').value;
-		var weight = document.getElementById('weightVal').value;
-		var date = document.getElementById('dateVal').value;
+		var name = document.getElementById('editName').value;
+		var reps = document.getElementById('editReps').value;
+		var weight = document.getElementById('editWeight').value;
+		var date = document.getElementById('editDate').value;
+		var editID = document.getElementsByClassName('editTableClass');
+		var submitID = editID[0].id;
+		/*
 		var lbs;
 		
 		if(document.getElementById('lbsYes').checked)
@@ -361,8 +365,12 @@ function editFormCatcher()
 		{
 			lbs=0;
 		}
+		*/
+		
+		var lbs = 1;
+		
 		console.log("Form data name", name);
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/insert' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + lbs;
+		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + submitID;
 
 		addReq.open('GET', subUrl, true);
 		addReq.addEventListener('load',function()
@@ -388,7 +396,8 @@ function editFormCatcher()
 	
 }
 
-*/
+
+
 function buttonSet()
 {
 

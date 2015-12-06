@@ -97,15 +97,15 @@ console.log("Getting into insert");
 
 app.get('/simple-update',function(req,res,next){
   var context = {};
-  pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ",
-    [req.query.name, req.query.done, req.query.due, req.query.id],
+  pool.query("UPDATE todo SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
+    [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs, req.query.subID,],
     function(err, result){
     if(err){
       next(err);
       return;
     }
     context.results = "Updated " + result.changedRows + " rows.";
-    res.render('home',context);
+    res.send(context.results);
   });
 });
 
