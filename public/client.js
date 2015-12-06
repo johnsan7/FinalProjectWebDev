@@ -409,24 +409,23 @@ function editFormCatcher()
 		var date = document.getElementById('editDate').value;
 		var editID = document.getElementById('updateDiv').firstChild.id;
 
-		/*
-		var lbs;
 		
-		if(document.getElementById('lbsYes').checked)
+		var edlbs;
+		
+		if(document.getElementById('editlbsYes').checked)
 		{
-			lbs=1;
+			edlbs=1;
 			
 		}
 		else
 		{
-			lbs=0;
+			edlbs=0;
 		}
-		*/
 		
 		var lbs = 1;
 		
 		console.log("Form data name", name);
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + editID;
+		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + edlbs + '&' + 'subID=' + editID;
 
 		editReq.open('GET', subUrl, true);
 		editReq.addEventListener('load',function()
