@@ -1,7 +1,11 @@
-//This code, var express through app.set('port',3000) is code from lectures and the class. The implementation that I have is the exact same as the lectures
-//This program is a game where there are 100 random zip codes from US locations. You have to guess the temperature within 5 degrees without knowing the name
-//of the city. You get 3 points for a correct answer and lose 1 point for an incorrect. 
 
+
+/*This code, var express through app.set('port',1976) is code from lectures and the class. The implementation that I have is the exact same as the lectures
+
+Much of the basic syntax was learned in lectures, but I have my own implementation. The basic functions though were provided by the instructor on the server side (in this document). I adapted those for 
+my purposes, changing what was necessary. 
+
+*/
 var express = require('express');
 
 var app = express();
@@ -35,11 +39,7 @@ app.set('port', 1976);
 
 
 
-//This is the basic code of the game. 
-
-//This next function is the function given by the instructor to reset the database and create a new one, a very bad idea generally, but 
-//Works well for this course
-
+//This first service resets the table, not advisable in production environments. Professor wrote entire function basically
 
 app.get('/reset-table',function(req,res,next){
   var context = {};
@@ -58,6 +58,7 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
+//This just renders the main page, all other rendering is done on the client side. 
 app.get('/',function(req,res,next){
 	
     res.render('data');
@@ -65,34 +66,41 @@ app.get('/',function(req,res,next){
 });
 
 
+//This sends the current table information to be drawn client side by drawTable. Note it sends the data, does not render the page. 
 app.get('/tables',function(req,res,next){
-console.log("getting to tables function, should be sending back everything")
+//console.log("getting to tables function, should be sending back everything")
   var results = {};
   pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
       return;
     }
-console.log("Got to after the mysql query");
+//console.log("Got to after the mysql query");
 	res.setHeader('Content-Type', 'application/json');
     
     res.send(JSON.stringify(rows));
   });
 });
 
+//This service receives requests to add things to the database and carries them out. Basic structure from professor Wolford. 
+
 app.get('/insert',function(req,res,next){
-console.log("Getting into insert");
+//console.log("Getting into insert");
 	  var context = {};
 	  pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
 		if(err){
 		  next(err);
 		  return;
 		}
-		console.log("Got past that insert stuff");
+//		console.log("Got past that insert stuff");
 		context.results = "Inserted id " + result.insertId;
 		res.send(context.results);
   });
 });
+
+//This function takes the update request. This is just the simple update and does not 
+//support where they have not entered particular data. This is because the form that is presented to the user is already pre-populated with the existing data.
+//For this function to get empty data, the user would have to have deleted the data, in such cases we assume they meant it to be empty. Basic structure from professor Wolford
 
 
 app.get('/simple-update',function(req,res,next){
@@ -105,14 +113,17 @@ app.get('/simple-update',function(req,res,next){
       next(err);
       return;
     }
-	console.log("Update successful -------------------------------------------------------------------------")
+//	console.log("Update successful -------------------------------------------------------------------------")
     context.results = "Updated " + result.changedRows + " rows.";
     res.send(context.results);
   });
 });
 
+
+//This deletes the row matching the id sent. Basic structure from professor Wolford
+
 app.get('/delete',function(req,res,next){
-console.log("Getting to delete function");	
+//console.log("Getting to delete function");	
 	var context = {};
 	pool.query("DELETE FROM workouts WHERE id=?",
 		[req.query.id],
@@ -126,8 +137,12 @@ console.log("Getting to delete function");
   });
 });
 
+
+//This is my function, when I generate the update form, I have it fill in the existing data. This function fetches that data to make sure the form has the 
+//Correct default values. 
+
 app.get('/generate-update-form-data',function(req,res,next){
-console.log("Getting to request for form building data function");	
+//console.log("Getting to request for form building data function");	
 
 	pool.query("SELECT id, name, reps, weight, date, lbs FROM workouts WHERE id=? ",
 		[req.query.id],
@@ -145,6 +160,7 @@ console.log("Getting to request for form building data function");
 
 
 //These next two are right from the lectures
+
 app.use(function(req,res)
 {
 	res.status(404);
