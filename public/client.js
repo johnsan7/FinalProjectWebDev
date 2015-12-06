@@ -345,7 +345,7 @@ function editFormCatcher()
 
 	var editButton = document.getElementById("submitEditForm");
 	
-	editButton.onclick = function(event)
+	editButton.addEventListener('click', = function(event)
 	{
 		console.log("This should be here for edit button if it is working ");
 		var editReq = new XMLHttpRequest();
@@ -393,7 +393,7 @@ function editFormCatcher()
 		});
 		editReq.send(null);
 		event.preventDefault();
-	};
+	});
 	
 	  
 	
