@@ -277,22 +277,22 @@ function buttonAssign()
 								var nameInput = document.createElement('input');
 								nameInput.type = 'text';
 								nameInput.value = name;
-								nameInput.defaultValue = editResponse.name;
+								nameInput.defaultValue = editResponse[0].name;
 								
 								var repsInput = document.createElement('input');
 								repsInput.type = 'number';
 								repsInput.value = reps;
-								repsInput.defaultValue = editResponse.reps;
+								repsInput.defaultValue = editResponse[0].reps;
 								
 								var weightInput = document.createElement('input');
 								weightInput.type = 'number';
 								weightInput.value = weight;
-								weightInput.defaultValue = editResponse.weight;
+								weightInput.defaultValue = editResponse[0].weight;
 								
 								var dateInput = document.createElement('input');
 								dateInput.type = 'date';
 								dateInput.value = date;
-								dateInput.defaultValue = editResponse.date;
+								dateInput.defaultValue = editResponse[0].date;
 								
 								var editSubmit = document.createElement('button');
 								editSubmit.id = 'submitEditForm';
