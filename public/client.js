@@ -279,7 +279,8 @@ function buttonAssign()
 								nameInput.value = editResponse[0].name;
 								nameInput.id = 'editName';
 								
-								nameInput.innerHTML = "Name";
+								edNameTitle = document.createElement('textContent');
+								edNameTitle = "Name:";
 								
 								
 								
@@ -316,6 +317,7 @@ function buttonAssign()
 								editSubmit.innerHTML = 'Submit';
 								editSubmit.type = 'submit';
 								
+								fieldsetEditForm.appendChild(edNameTitle);
 								fieldsetEditForm.appendChild(nameInput);
 								fieldsetEditForm.appendChild(repsInput);
 								fieldsetEditForm.appendChild(weightInput);
