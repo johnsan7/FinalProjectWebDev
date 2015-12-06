@@ -484,7 +484,9 @@ function buttonSet()
 
 
 
+<<<<<<< HEAD
 //I have added this to try to get github to work outerHTML
+=======
 
 /*
 Backup of function while I monkey with 
@@ -540,5 +542,5 @@ function buttonSet()
 	  
 	
 }
+<<<<<<< HEAD
 */
->>>>>>> parent of 703b1b2... asd
