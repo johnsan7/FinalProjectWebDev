@@ -98,7 +98,7 @@ console.log("Getting into insert");
 app.get('/simple-update',function(req,res,next){
 	console.log("Simple update ping -----------------------------------------------");
   var context = {};
-  pool.query("UPDATE todo SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
+  pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
     [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs, req.query.subID,],
     function(err, result){
     if(err){
