@@ -311,6 +311,8 @@ function buttonAssign()
 								radio1.id = 'editlbsYes';
 								radio1.text = 'Yes';
 								
+
+								
 								var edlbsYesTitle = document.createTextNode('lbs: Yes');
 								
 								var radio2 = document.createElement('input');
@@ -318,6 +320,15 @@ function buttonAssign()
 								radio2.name = 'editlbs';
 								radio2.id = 'editlbsNo';
 								radio2.text = 'No';
+								
+								if(editResponse[0].lbs == 1)
+								{
+									radio1.checked='checked';
+								}
+								else
+								{
+									radio2.checked='checked';
+								}
 								
 								var edlbsNoTitle = document.createTextNode('No ');
 								
