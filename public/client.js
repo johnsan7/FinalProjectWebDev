@@ -298,10 +298,10 @@ function buttonAssign()
 								fieldsetEditForm.appendChild(repsInput);
 								fieldsetEditForm.appendChild(weightInput);
 								fieldsetEditForm.appendChild(dateInput);
-								fieldsetEditForm.appendChild(editSubmit);
+								//fieldsetEditForm.appendChild(editSubmit);
 								
 								editForm.appendChild(fieldsetEditForm);
-								
+								editForm.appendChild(editSubmit);
 								efDiv.appendChild(editForm);
 								
 								document.body.appendChild(efDiv);
