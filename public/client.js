@@ -302,7 +302,7 @@ function buttonAssign()
 								
 								efDiv.appendChild(editForm);
 								
-								document.getElementById('dataTable').appendChild(efDiv);
+								document.body.appendChild(efDiv);
 								
 								//This is too complicated to do the option for lbs right now, I am coming back to that part
 								
