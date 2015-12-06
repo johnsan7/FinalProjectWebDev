@@ -322,7 +322,7 @@ function buttonAssign()
 
 							}
 						});
-						console.log("Sending update request");
+
 						updateReq.send(null);
 						event.preventDefault();	
 						
@@ -339,6 +339,8 @@ function buttonAssign()
 
 function editFormCatcher()
 {
+	
+	console.log("Got into form catcher ------------------------------------------------------------------------------------------------------")
 
 	var editButton = document.getElementById("submitEditForm");
 	
