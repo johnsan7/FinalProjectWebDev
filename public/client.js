@@ -314,7 +314,7 @@ function buttonAssign()
 								//This is too complicated to do the option for lbs right now, I am coming back to that part
 								
 
-
+								editFormCatcher();
 
 							}
 							else
