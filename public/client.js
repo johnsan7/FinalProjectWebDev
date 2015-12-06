@@ -289,15 +289,21 @@ function buttonAssign()
 								repsInput.value = editResponse[0].reps;
 								repsInput.id = 'editReps';
 								
+								var edRepsTitle = document.createTextNode('Reps:');
+								
 								var weightInput = document.createElement('input');
 								weightInput.type = 'number';
 								weightInput.value = editResponse[0].weight;
 								weightInput.id = 'editWeight';
 								
+								var edWeightTitle = document.createTextNode('Weight:');
+								
 								var dateInput = document.createElement('input');
 								dateInput.type = 'date';
 								dateInput.value = editResponse[0].date;
 								dateInput.id = 'editDate';
+								
+								var edDateTitle = document.createTextNode('Date:');
 								
 								var radio1 = document.createElement('input');
 								radio1.type = 'radio';
@@ -305,12 +311,15 @@ function buttonAssign()
 								radio1.id = 'editlbsYes';
 								radio1.text = 'Yes';
 								
+								var edlbsYesTitle = document.createTextNode('lbs: Yes');
+								
 								var radio2 = document.createElement('input');
 								radio2.type = 'radio';
 								radio2.name = 'editlbs';
 								radio2.id = 'editlbsNo';
 								radio2.text = 'No';
 								
+								var edlbsNoTitle = document.createTextNode('No ');
 								
 								var editSubmit = document.createElement('input');
 								editSubmit.id = 'submitEditForm';
@@ -319,10 +328,20 @@ function buttonAssign()
 								
 								fieldsetEditForm.appendChild(edNameTitle);
 								fieldsetEditForm.appendChild(nameInput);
+								fieldsetEditForm.appendChild(edRepsTitle);
 								fieldsetEditForm.appendChild(repsInput);
+								fieldsetEditForm.appendChild(edWeightTitle);
 								fieldsetEditForm.appendChild(weightInput);
+								fieldsetEditForm.appendChild(edDateTitle);
+								
 								fieldsetEditForm.appendChild(dateInput);
+								
+								fieldsetEditForm.appendChild(edlbsYesTitle);
+								
 								fieldsetEditForm.appendChild(radio1);
+								
+								
+								fieldsetEditForm.appendChild(edlbsNoTitle);
 								fieldsetEditForm.appendChild(radio2);
 								fieldsetEditForm.appendChild(dateInput);
 								fieldsetEditForm.appendChild(editSubmit);
