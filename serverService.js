@@ -1,6 +1,8 @@
 
 
-/*This code, var express through app.set('port',1976) is code from lectures and the class. The implementation that I have is the exact same as the lectures
+/*Andrew Johnson, Web Development, Assignment 10
+
+This code, var express through app.set('port',1976) is code from lectures and the class. The implementation that I have is the exact same as the lectures
 
 Much of the basic syntax was learned in lectures, but I have my own implementation. The basic functions though were provided by the instructor on the server side (in this document). I adapted those for 
 my purposes, changing what was necessary. 
@@ -104,9 +106,8 @@ app.get('/insert',function(req,res,next){
 
 
 app.get('/simple-update',function(req,res,next){
-	console.log("Simple update ping -----------------------------------------------");
   var context = {};
-  pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
+  pool.query("UPDATE todo SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
     [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs, req.query.subID,],
     function(err, result){
     if(err){
