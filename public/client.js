@@ -279,7 +279,7 @@ function buttonAssign()
 								nameInput.value = editResponse[0].name;
 								nameInput.id = 'editName';
 								
-								nameInput.name = 'Name';			
+								nameInput.innerHTML = "Name";
 								
 								
 								
