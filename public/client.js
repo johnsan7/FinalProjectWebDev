@@ -487,7 +487,10 @@ function buttonSet()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 703b1b2... asd
 =======
 >>>>>>> parent of 703b1b2... asd
 /*
@@ -545,6 +548,10 @@ function buttonSet()
 	
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+*/
+>>>>>>> parent of 703b1b2... asd
+=======
 */
 >>>>>>> parent of 703b1b2... asd
 =======
