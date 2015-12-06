@@ -248,14 +248,16 @@ function buttonAssign()
 							if(updateReq.status >= 200 && updateReq.status < 400)
 							{
 								
-								/*if(document.getElementById('dataTable').hasChildNodes())
+								if(document.getElementById('dataTable').hasChildNodes())
 								{
 									console.log("is this happenig once?");
-									var onlyChild = document.getElementById('dataTable').firstChild;
-									document.getElementById('dataTable').removeChild(onlyChild);
+									var delNode = document.getElementById('updateDiv');
+									document.documentElement.removeChild(delNode);
+									
+									//document.getElementById('efDiv').removeChild(onlyChild);
 							
 								}
-								*/
+								
 						
 								console.log("getting into response");
 								var editResponse = JSON.parse(updateReq.responseText);
