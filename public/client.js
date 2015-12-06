@@ -345,7 +345,7 @@ function editFormCatcher()
 	editButton.onclick = function(event)
 	{
 	
-		var addReq = new XMLHttpRequest();
+		var editReq = new XMLHttpRequest();
 	
 		var name = document.getElementById('editName').value;
 		var reps = document.getElementById('editReps').value;
@@ -372,10 +372,10 @@ function editFormCatcher()
 		console.log("Form data name", name);
 		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + submitID;
 
-		addReq.open('GET', subUrl, true);
-		addReq.addEventListener('load',function()
+		editReq.open('GET', subUrl, true);
+		editReq.addEventListener('load',function()
 		{
-			if(addReq.status >= 200 && addReq.status < 400)
+			if(editReq.status >= 200 && editReq.status < 400)
 			{
 				console.log("Drawing table in add --------------------------------------------------------------------------------");
 				drawTable();
@@ -388,7 +388,7 @@ function editFormCatcher()
 			
 			
 		});
-		addReq.send(null);
+		editReq.send(null);
 		event.preventDefault();
 	};
 	
