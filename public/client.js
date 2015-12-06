@@ -294,6 +294,19 @@ function buttonAssign()
 								dateInput.value = editResponse[0].date;
 								dateInput.id = 'editDate';
 								
+								var radio1 = document.createElement('input');
+								radio1.type = 'radio';
+								radio1.name = 'editlbs';
+								radio1.id = 'editlbsYes';
+								radio1.text = 'Yes';
+								
+								var radio2 = document.createElement('input');
+								radio2.type = 'radio';
+								radio2.name = 'editlbs';
+								radio2.id = 'editlbsNo';
+								radio2.text = 'No';
+								
+								
 								var editSubmit = document.createElement('input');
 								editSubmit.id = 'submitEditForm';
 								editSubmit.innerHTML = 'Submit';
@@ -302,6 +315,9 @@ function buttonAssign()
 								fieldsetEditForm.appendChild(nameInput);
 								fieldsetEditForm.appendChild(repsInput);
 								fieldsetEditForm.appendChild(weightInput);
+								fieldsetEditForm.appendChild(dateInput);
+								fieldsetEditForm.appendChild(radio1);
+								fieldsetEditForm.appendChild(radio2);
 								fieldsetEditForm.appendChild(dateInput);
 								fieldsetEditForm.appendChild(editSubmit);
 								
@@ -396,7 +412,7 @@ function editFormCatcher()
 		event.preventDefault();
 	});
 	
-	  
+		convert yyyy-mm-ddT00:00:00 to yyyy-mm-dd
 	
 }
 
