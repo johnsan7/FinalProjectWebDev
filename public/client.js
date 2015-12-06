@@ -354,8 +354,8 @@ function editFormCatcher()
 		var reps = document.getElementById('editReps').value;
 		var weight = document.getElementById('editWeight').value;
 		var date = document.getElementById('editDate').value;
-		var editID = document.getElementsByClassName('editTableClass');
-		var finalID = editID[0].id;
+		var editID = document.getElementById('updateDiv').firstChild.id;
+
 		/*
 		var lbs;
 		
@@ -373,7 +373,7 @@ function editFormCatcher()
 		var lbs = 1;
 		
 		console.log("Form data name", name);
-		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + submitID;
+		var subUrl = 'http://ec2-52-26-46-121.us-west-2.compute.amazonaws.com:1976/simple-update' + '?name=' + name  + '&' +  'reps=' + reps + '&' + 'weight=' + weight +  '&' + 'date=' + date +'&' + 'lbs=' + '&' + 'subID=' + editID;
 
 		editReq.open('GET', subUrl, true);
 		editReq.addEventListener('load',function()
