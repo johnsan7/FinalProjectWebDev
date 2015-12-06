@@ -347,7 +347,7 @@ function editFormCatcher()
 	
 	editButton.onclick = function(event)
 	{
-	
+		console.log("This should be here for edit button if it is working ");
 		var editReq = new XMLHttpRequest();
 	
 		var name = document.getElementById('editName').value;
